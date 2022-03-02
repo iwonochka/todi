@@ -20,7 +20,7 @@
 
     <%= yield %>
     <% unless current_page?(controller: 'pages', action: 'home') %>
-    <%= render 'components/navbar' %>
+      <%= render 'components/navbar' %>
     <% end %>
 
     </div>
