@@ -1,7 +1,7 @@
 Event.destroy_all
 User.destroy_all
 
-user_1 = User.create!(username: "bob", password: "123456", email: "bob@ilovecapys.com", location: "Reichenberger Str. 158, 10999 Berlin")
+user_1 = User.create!(username: "bob", password: "123456", email: "bob@ilovecapys.com", location: "Reichenberger Straße 158, 10999 Berlin")
 user_1.save!
 
 user_2 = User.create!(username: "helmut", password: "123456", email: "helmut@capysarethebest.com", location: "Oberhaardter Weg 18, 14193 Berlin")
@@ -150,3 +150,22 @@ event11 = Event.new(name: "Lily’s B-day party",
     free: true,
     price: 0
    )
+
+
+  #  Create seeds for keywords (tags)
+  # English
+  # German
+  # Turkish
+  # Polish
+  # Spanish
+  # Italian
+  # Arabic
+  # French
+  # Russian
+  # Portuguese
+  # Hebrew
+  # outdoor
+  # LGBTQ+
+  # special needs
+  # single mum
+  # single dad
