@@ -1,12 +1,17 @@
-.navbar-lewagon {
-  justify-content: space-between;
+.navbar {
+  display:flex;
+  justify-content: space-around;
   background: white;
-}
-
-.navbar-lewagon .navbar-collapse {
   flex-grow: 0;
+  position: fixed;
+  bottom: 0;
+  position: sticky;
+  height: 65px;
+  width: 100%;
 }
+.page-container {
+  display: grid;
+  min-height: 100vh;
+  grid-template-rows: 1fr auto;
 
-.navbar-lewagon .navbar-brand img {
-  width: 40px;
 }
