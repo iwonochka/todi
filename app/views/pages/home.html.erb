@@ -1,18 +1,28 @@
-<div class="container-homepage">
-  <div class="top-bar">
-    <div class="container margin-logo-home">
-      <%= image_tag "logo.png", class: "homepage-logo" %>
-    </div>
+<div class="top-bar">
+  <div class="container margin-logo-home">
+    <%= image_tag "logo.png", class: "homepage-logo" %>
   </div>
-  <div class="homepage-background" style="background-image: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)), url(<%= image_path "drawinggirl.png"%>);">
-    <!--insert searchbar -->
-    <%= link_to "Connect", "#", class: "btn btn-homepage" %>
-  </div>
-  <%= render 'components/navbar' %>
 </div>
-<<<<<<< HEAD
-=======
 
-<!--insert searchbar -->
-<%= link_to "Connect", "#", class: "btn btn-homepage" %>
->>>>>>> 191b7dd2f5b07989425bbb55984462fc4c4de76e
+<div class="homepage-background" style="background-image: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)), url(<%= image_path "drawing_girl.png"%>);">
+  <div class="wrap">
+    <%= form_tag profiles_path, method: :get do %>
+      <div class="search" class="move-bar">
+        <div>
+          <%= text_field_tag :query,
+            params[:query],
+            class: "searchTerm",
+            placeholder: "type city or ZIP code ",
+            class: "searchbar"
+          %>
+        </div>
+        <div>
+          <%= submit_tag "Connect!", class: "btn btn-homepage" %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+
+<%= render 'components/navbar' %>
