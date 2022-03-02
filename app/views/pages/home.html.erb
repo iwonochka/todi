@@ -1,12 +1,12 @@
-  <!-- replace with logo -->
-
 <div class="container-homepage">
-    <div class="logo start-logo">
-      <%= image_tag "placeholdert.jpg" %>
+  <div class="top-bar">
+    <div class="container margin-logo-home">
+      <%= image_tag "logo.png", class: "homepage-logo" %>
     </div>
   </div>
+  <div class="homepage-background" style="background-image: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)), url(<%= image_path "drawinggirl.png"%>);">
+    <!--insert searchbar -->
+    <%= link_to "Connect", "#", class: "btn btn-homepage" %>
+  </div>
+  <%= render 'components/navbar' %>
 </div>
-
-<!--insert searchbar -->
-<%= link_to "Connect", "#", class: "btn btn-homepage" %>
-<%= render 'components/navbar' %>

@@ -1,1 +1,34 @@
 // Specific CSS for your home-page
+.container-homepage{
+  justify-content: center;
+}
+
+.top-bar {
+  position: relative;
+}
+
+.homepage-background {
+  height: 80vh;
+  width: 100%;
+  margin-top: 80px;
+}
+
+.margin-logo-home {
+}
+
+.homepage-logo{
+  width: 120px;
+  height:120px;
+  display: block;
+  position: absolute;
+  z-index: 5;
+  margin: -60px auto;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.btn-homepage{
+
+}
