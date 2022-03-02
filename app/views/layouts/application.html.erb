@@ -19,8 +19,10 @@
     <%= render 'shared/flashes' %>
 
     <%= yield %>
-    <div class="navbar-container"></div>
+    <% unless current_page?(controller: 'pages', action: 'home') %>
     <%= render 'components/navbar' %>
+    <% end %>
+
     </div>
   </body>
 </html>
