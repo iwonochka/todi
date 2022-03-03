@@ -1,0 +1,9 @@
+<a href="<%profile_path(@user)%>">
+<div class="profile-mini-card">
+  <img class="avatar-large" src="profilepic1.jpg" />
+  <div class="profile-mini-card-infos">
+    <h2><%=@user.username%></h2>
+    <p><%=@user.description.truncate_words(9)%></p>
+  </div>
+</div>
+</a>
