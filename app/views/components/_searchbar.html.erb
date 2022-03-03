@@ -2,9 +2,11 @@
 
 <!--language family type activities and special needs-->
 
-var searchwords = []
+<% activeTagsArray = [] %>
 <!-- Table -->
+<div>
 <input type="text" id="myInput" onkeyup="myFunction()" placeholder="What are you looking for?">
+</div>
 
 <div id="proposedTags">
   <% list = ["French", "English", "Jogging", "Joggling", "Autism", "Single Mum", "Single Dad", "LGBTQ+"] %>
@@ -31,7 +33,6 @@ var searchwords = []
     for (i = 0; i < tagitem.length; i++) {
       if (tagitem) {
         txtValue = tagitem[i].textContent || tagitem[i].innerText;
-
         if (txtValue.toUpperCase().indexOf(typedletters) > -1) {
           tagitem[i].style.display = "";
         } else {
@@ -47,6 +48,20 @@ var searchwords = []
       e.target.className = "tagitem"
     } else {
       e.target.className += " active"
+    }
+  }
+
+  function getActiveTags(){
+    var input, filter, table, tagitem, word, i, txtValue;
+    input = document.getElementById("myInput");
+    typedletters = input.value.toUpperCase();
+    table = document.getElementById("proposedTags");
+    tagitem = table.getElementsByClassName("tagitem");
+    // Loop through all table rows, and hide those who don't match the search query
+    for (i = 0; i < tagitem.length; i++) {
+      if (tagitem.className == "tagitem active") {
+        activeTagsArray.push(tagitem)
+      }
     }
   }
 
