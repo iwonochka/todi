@@ -1,7 +1,12 @@
 Event.destroy_all
 User.destroy_all
 
-user_1 = User.create!(username: "bob", password: "123456", email: "bob@ilovecapys.com", location: "Reichenberger Str. 158, 10999 Berlin")
+Tag.destroy_all
+UserTag.destroy_all
+puts "Old seeds destroyed"
+puts "Creating users"
+
+user_1 = User.create!(username: "bob", password: "123456", email: "bob@ilovecapys.com", location: "Reichenberger Straße 158, 10999 Berlin")
 user_1.save!
 
 user_2 = User.create!(username: "helmut", password: "123456", email: "helmut@capysarethebest.com", location: "Oberhaardter Weg 18, 14193 Berlin")
@@ -18,9 +23,10 @@ user_5.save!
 
 user_6 = User.create!(username: "hildegard", password: "123456", email: "hildegard@copacabana.com", location: "Taubertstraße 29C, 14193 Berlin")
 user_6.save!
-
+puts "Users created"
+puts "Creating events"
 #creating seed for events
-event1 = Event.new( name: "Labyrinth Kindermuseum",
+event1 = Event.create( name: "Labyrinth Kindermuseum",
    starting_date: Date.parse("10/02/2022"),
    ending_date: Date.parse("23/02/2022"),
    starting_time: Time.parse("9:30"),
@@ -30,7 +36,7 @@ event1 = Event.new( name: "Labyrinth Kindermuseum",
    free: true,
    price: 0
   )
-event2 = Event.new(name: "Berlin Zoological Garden",
+event2 = Event.create(name: "Berlin Zoological Garden",
     starting_date: Date.parse("19/02/2022"),
     ending_date: Date.parse("20/03/2022"),
     starting_time: Time.parse("9:30"),
@@ -40,7 +46,7 @@ event2 = Event.new(name: "Berlin Zoological Garden",
     free: false,
     price: 20
    )
-event10 = Event.new(name: "Legoland Discovery Centre",
+event10 = Event.create(name: "Legoland Discovery Centre",
     starting_date: Date.parse("13/03/2022"),
     ending_date: Date.parse("15/03/2022"),
     starting_time: Time.parse("9:30"),
@@ -50,7 +56,7 @@ event10 = Event.new(name: "Legoland Discovery Centre",
     free: true,
     price:0
    )
-event3 = Event.new(name: "Tierpark",
+event3 = Event.create(name: "Tierpark",
     starting_date: Date.parse("18/03/2022"),
     ending_date: Date.parse("23/03/2022"),
     starting_time: Time.parse("9:30"),
@@ -60,7 +66,7 @@ event3 = Event.new(name: "Tierpark",
     free: false,
     price: 22.3
    )
-event4 = Event.new(name: "Natural History Museum",
+event4 = Event.create(name: "Natural History Museum",
     starting_date: Date.parse("4/04/2022"),
     ending_date: Date.parse("25/04/2022"),
     starting_time: Time.parse("9:30"),
@@ -70,7 +76,7 @@ event4 = Event.new(name: "Natural History Museum",
     free: false,
     price: 21.30
    )
-event5 = Event.new(name: "Tempelhofer Park",
+event5 = Event.create(name: "Tempelhofer Park",
     starting_date: Date.parse("01/04/2022"),
     ending_date: Date.parse("02/08/2022"),
     starting_time: Time.parse("9:30"),
@@ -80,7 +86,7 @@ event5 = Event.new(name: "Tempelhofer Park",
     free: true,
     price: 0
    )
-event6 = Event.new(name: "AquaDom and Sea Life",
+event6 = Event.create(name: "AquaDom and Sea Life",
     starting_date: Date.parse("12/04/2022"),
     ending_date: Date.parse("21/10/2022"),
     starting_time:Time.parse("9:30"),
@@ -90,7 +96,7 @@ event6 = Event.new(name: "AquaDom and Sea Life",
     free: false,
     price: 30
    )
-event7 = Event.new(name: "Waldhochseilgarten Jungfernheide",
+event7 = Event.create(name: "Waldhochseilgarten Jungfernheide",
     starting_date:Date.parse("17/06/2022"),
     ending_date:Date.parse("12/06/2022"),
     starting_time: Time.parse("9:00"),
@@ -100,7 +106,7 @@ event7 = Event.new(name: "Waldhochseilgarten Jungfernheide",
     free: false,
     price: 10
    )
-event8 =Event.new(name: "Science Center Spectrum",
+event8 =Event.create(name: "Science Center Spectrum",
     starting_date: Date.parse("02/06/2022"),
     ending_date: Date.parse("17/06/2022"),
     starting_time: Time.parse("9:00"),
@@ -110,7 +116,7 @@ event8 =Event.new(name: "Science Center Spectrum",
     free: true,
     price: 0
    )
-event9 = Event.new(name: "MACHmit! Museum for Children",
+event9 = Event.create(name: "MACHmit! Museum for Children",
     starting_date: Date.parse("01/03/2022"),
     ending_date: Date.parse("02/06/2022"),
     starting_time: Time.parse("10:00"),
@@ -120,7 +126,7 @@ event9 = Event.new(name: "MACHmit! Museum for Children",
     free: true,
     price: 0
    )
-event11 = Event.new(name: "Baby Yoga",
+event11 = Event.create(name: "Baby Yoga",
     starting_date: Date.parse("28/03/2022"),
     ending_date: Date.parse("28/03/2022"),
     starting_time: Time.parse("16:00"),
@@ -130,7 +136,7 @@ event11 = Event.new(name: "Baby Yoga",
     free: true,
     price: 0
    )
-event11 = Event.new(name: "Lily’s B-day party",
+event11 = Event.create(name: "Lily’s B-day party",
     starting_date: Date.parse("05/03/2022"),
     ending_date: Date.parse("05/03/2022"),
     starting_time: Time.parse("13:00"),
@@ -140,7 +146,7 @@ event11 = Event.new(name: "Lily’s B-day party",
     free: true,
     price: 0
    )
-   event12 = Event.new(name: "Shantala massage class",
+   event12 = Event.create(name: "Shantala massage class",
     starting_date: Date.parse("06/03/2022"),
     ending_date: Date.parse("06/03/2022"),
     starting_time: Time.parse("11:30"),
@@ -150,3 +156,43 @@ event11 = Event.new(name: "Lily’s B-day party",
     free: true,
     price: 0
    )
+
+   puts "Events created"
+   puts "Creating tags"
+
+tag1 = Tag.create(name: "English")
+tag2 = Tag.create(name: "German")
+tag3 = Tag.create(name: "French")
+tag4 = Tag.create(name: "Arabic")
+tag5 = Tag.create(name: "Russian")
+tag6 = Tag.create(name: "Polish")
+tag7 = Tag.create(name: "LGBTQ+")
+tag8 = Tag.create(name: "single-parent")
+tag9 = Tag.create(name: "new parent")
+tag10 = Tag.create(name: "45+ parent")
+tag11 = Tag.create(name: "autism")
+tag12 = Tag.create(name: "ADHD")
+tag13 = Tag.create(name: "diabetic")
+tag14 = Tag.create(name: "cerebral palsy")
+tag15 = Tag.create(name: "yoga")
+tag16 = Tag.create(name: "vegan")
+tag17 = Tag.create(name: "biking")
+
+puts "Tags created"
+puts "Creating user tags"
+user_tag1 = UserTag.create(user_id: user_1.id, tag_id: tag1.id)
+user_tag2 = UserTag.create(user_id: user_1.id, tag_id: tag7.id)
+user_tag3 = UserTag.create(user_id: user_2.id, tag_id: tag4.id)
+user_tag4 = UserTag.create(user_id: user_2.id, tag_id: tag8.id)
+user_tag5 = UserTag.create(user_id: user_3.id, tag_id: tag10.id)
+user_tag6 = UserTag.create(user_id: user_3.id, tag_id: tag17.id)
+user_tag7 = UserTag.create(user_id: user_4.id, tag_id: tag5.id)
+user_tag8 = UserTag.create(user_id: user_4.id, tag_id: tag12.id)
+user_tag9 = UserTag.create(user_id: user_5.id, tag_id: tag3.id)
+user_tag10 = UserTag.create(user_id: user_5.id, tag_id: tag15.id)
+user_tag11 = UserTag.create(user_id: user_5.id, tag_id: tag16.id)
+user_tag12 = UserTag.create(user_id: user_6.id, tag_id: tag6.id)
+user_tag13 = UserTag.create(user_id: user_6.id, tag_id: tag12.id)
+user_tag14 = UserTag.create(user_id: user_6.id, tag_id: tag8.id)
+puts "User tags created"
+
