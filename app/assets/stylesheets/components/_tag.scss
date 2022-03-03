@@ -6,5 +6,13 @@
   color: $orange;
   font-weight: lighter;
   box-shadow: none;
-  padding: auto, 8px;
+  padding: auto, 6px;
+}
+
+.keywords-container {
+  width: 80vw;
+  display: flex;
+  margin: auto;
+  justify-content: space-around;
+  flex-wrap: wrap;
 }
