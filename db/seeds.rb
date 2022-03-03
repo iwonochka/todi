@@ -1,10 +1,12 @@
 Event.destroy_all
 User.destroy_all
+
 Tag.destroy_all
 UserTag.destroy_all
 puts "Old seeds destroyed"
 puts "Creating users"
-user_1 = User.create!(username: "bob", password: "123456", email: "bob@ilovecapys.com", location: "Reichenberger Str. 158, 10999 Berlin")
+
+user_1 = User.create!(username: "bob", password: "123456", email: "bob@ilovecapys.com", location: "Reichenberger Straße 158, 10999 Berlin")
 user_1.save!
 
 user_2 = User.create!(username: "helmut", password: "123456", email: "helmut@capysarethebest.com", location: "Oberhaardter Weg 18, 14193 Berlin")
@@ -154,6 +156,7 @@ event11 = Event.create(name: "Lily’s B-day party",
     free: true,
     price: 0
    )
+
    puts "Events created"
    puts "Creating tags"
 
@@ -192,3 +195,4 @@ user_tag12 = UserTag.create(user_id: user_6.id, tag_id: tag6.id)
 user_tag13 = UserTag.create(user_id: user_6.id, tag_id: tag12.id)
 user_tag14 = UserTag.create(user_id: user_6.id, tag_id: tag8.id)
 puts "User tags created"
+
