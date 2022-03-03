@@ -6,57 +6,48 @@ var searchwords = []
 <!-- Table -->
 <input type="text" id="myInput" onkeyup="myFunction()" placeholder="What are you looking for?">
 
-<table id="myTable">
-  <tr class="header">
-    <th style="width:60%;">tags</th>
-  </tr>
-  <tr>
-    <td>French</td>
-  </tr>
-  <tr>
-    <td>English</td>
-  </tr>
-  <tr>
-    <td>Jogging</td>
-  </tr>
-  <tr>
-    <td>Autism</td>
-  </tr>
-  <tr>
-    <td>Joggling</td>
-  </tr>
-  <tr>
-    <td>Single mum</td>
-  </tr>
-  <tr>
-    <td>Single dad</td>
-  </tr>
-  <tr>
-    <td>LGBTQ+</td>
-  </tr>
-</table>
+<div id="proposedTags">
+  <% list = ["French", "English", "Jogging", "Joggling", "Autism", "Single Mum", "Single Dad", "LGBTQ+"] %>
+  <% list.each do |item| %>
+    <div class="tagitem" onclick="makeActive(event)"> <%= item %> </div>
+  <% end %>
+</div>
 
 <!--filter-->
 <script>
-function myFunction() {
-  // Declare variables
-  var input, filter, table, tr, td, i, txtValue;
+  var input, filter, table, tagitem, word, i, txtValue;
   input = document.getElementById("myInput");
-  filter = input.value.toUpperCase();
-  table = document.getElementById("myTable");
-  tr = table.getElementsByTagName("tr");
+  typedletters = input.value.toUpperCase();
+  table = document.getElementById("proposedTags");
+  tagitem = table.getElementsByClassName("tagitem");
 
-  // Loop through all table rows, and hide those who don't match the search query
-  for (i = 0; i < tr.length; i++) {
-    td = tr[i].getElementsByTagName("td")[0];
-    if (td) {
-      txtValue = td.textContent || td.innerText;
-      if (txtValue.toUpperCase().indexOf(filter) > -1) {
-        tr[i].style.display = "";
-      } else {
-        tr[i].style.display = "none";
+  function myFunction() {
+    var input, filter, table, tagitem, word, i, txtValue;
+    input = document.getElementById("myInput");
+    typedletters = input.value.toUpperCase();
+    table = document.getElementById("proposedTags");
+    tagitem = table.getElementsByClassName("tagitem");
+    // Loop through all table rows, and hide those who don't match the search query
+    for (i = 0; i < tagitem.length; i++) {
+      if (tagitem) {
+        txtValue = tagitem[i].textContent || tagitem[i].innerText;
+
+        if (txtValue.toUpperCase().indexOf(typedletters) > -1) {
+          tagitem[i].style.display = "";
+        } else {
+          tagitem[i].style.display = "none";
+        }
       }
     }
   }
-}
+
+  function makeActive(e) {
+    console.log(e.target.className)
+    if (e.target.className == "tagitem active") {
+      e.target.className = "tagitem"
+    } else {
+      e.target.className += " active"
+    }
+  }
+
 </script>
