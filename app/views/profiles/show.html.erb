@@ -1,1 +1,29 @@
-<h1> hola </h1>
+
+<div class="main-container">
+
+  <div class="profilepic-container">
+    <%# cl_image_tag @user.photo.key %>
+    <%if @user.photo.attached? %>
+      <%= cl_image_tag(@user.photo.key, class: 'profilepic') %>
+    <% else %>
+      <%= image_tag("placeholder.png", class: 'profilepic' ) %>
+    <% end %>
+    <h2 class="username"><%= @user.username %></h2>
+  </div>
+
+  <div class="description-container">
+
+    <h2>About us</h2>
+    <p><%= @user.description %></p>
+
+    <h2>Keywords</h2>
+    <div class="keywords-container">
+      <% @user.tags.each do |tag| %>
+        <p class="tag"><%= tag.name %></p>
+      <% end %>
+    </div>
+  </div>
+
+  <a class="connect-button btn btn-pink" href="<%# users_path %>">Connect</a>
+
+</div>
