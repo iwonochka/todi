@@ -19,8 +19,12 @@
     <%= render 'shared/flashes' %>
 
     <%= yield %>
-    <div class="navbar-container"></div>
+
+    <% unless current_page?(root_path) ||
+              current_page?(new_user_session_path) ||
+              current_page?(user_session_path) %>
     <%= render 'components/navbar' %>
+    <% end %>
     </div>
   </body>
 </html>

@@ -1,20 +1,23 @@
 .btn {
-  background-color: #F55E61;
+  background-color: $pink;
+  font-family: Roboto;
   color: white;
   border: 1px solid white;
   padding: 8px 24px;
   border-radius: 50px;
   font-weight: lighter;
-  opacity: 1;
   transition: opacity 0.3s ease;
 }
 
 .btn :hover {
-  color: black;
+  font-weight: 500px;
 }
 
-.btn-homepage {
+.btn-pink {
+  background-color: $pink;
 }
-
-.btn-homepage :hover {
+.btn-orange {
+  background-color: $orange;
+  padding: 2px 10px;
+  font-size: 12px;
 }
