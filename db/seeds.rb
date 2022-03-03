@@ -1,8 +1,9 @@
+UserTag.destroy_all
+EventTag.destroy_all
 Event.destroy_all
 User.destroy_all
-
 Tag.destroy_all
-UserTag.destroy_all
+
 puts "Old seeds destroyed"
 puts "Creating users"
 
