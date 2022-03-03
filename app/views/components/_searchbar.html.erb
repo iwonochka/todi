@@ -1,0 +1,62 @@
+<h1> playground for the filter </h1>
+
+<!--language family type activities and special needs-->
+
+var searchwords = []
+<!-- Table -->
+<input type="text" id="myInput" onkeyup="myFunction()" placeholder="What are you looking for?">
+
+<table id="myTable">
+  <tr class="header">
+    <th style="width:60%;">tags</th>
+  </tr>
+  <tr>
+    <td>French</td>
+  </tr>
+  <tr>
+    <td>English</td>
+  </tr>
+  <tr>
+    <td>Jogging</td>
+  </tr>
+  <tr>
+    <td>Autism</td>
+  </tr>
+  <tr>
+    <td>Joggling</td>
+  </tr>
+  <tr>
+    <td>Single mum</td>
+  </tr>
+  <tr>
+    <td>Single dad</td>
+  </tr>
+  <tr>
+    <td>LGBTQ+</td>
+  </tr>
+</table>
+
+<!--filter-->
+<script>
+function myFunction() {
+  // Declare variables
+  var input, filter, table, tr, td, i, txtValue;
+  input = document.getElementById("myInput");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("myTable");
+  tr = table.getElementsByTagName("tr");
+
+  // Loop through all table rows, and hide those who don't match the search query
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[0];
+    if (td) {
+      txtValue = td.textContent || td.innerText;
+      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }
+  }
+}
+</script>
