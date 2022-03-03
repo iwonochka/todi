@@ -6,92 +6,92 @@ UserTag.destroy_all
 puts "Old seeds destroyed"
 puts "Creating users"
 
-user_1 = User.create!(username: "bob", password: "123456", email: "bob@ilovecapys.com", location: "Reichenberger Straße 158, 10999 Berlin")
+user_1 = User.create!(username: "Charlotte", password: "123456", email: "charlotte@gmail.com", location: "Reichenberger Straße 158, 10999 Berlin", description: "We're proud moms of 3yrs old Charlie and we'd love to meet other queer families in our area! Let us know if you'd like to hang out!" )
 user_1.save!
 
-user_2 = User.create!(username: "helmut", password: "123456", email: "helmut@capysarethebest.com", location: "Oberhaardter Weg 18, 14193 Berlin")
+user_2 = User.create!(username: "Yusuf", password: "123456", email: "yusuf@gmail.com", location: "Oberhaardter Weg 18, 14193 Berlin", description: "I'm a single dad from Jordan, new to Berlin. I'd love to meet other Arabic speaking parents and exchange advice, spend some time together!")
 user_2.save!
 
-user_3 = User.create!(username: "gertrude", password: "123456", email: "gertrude@capys.com", location: "Aachener Str. 43, 10713 Berlin")
+user_3 = User.create!(username: "Silke", password: "123456", email: "silke@gmail.com", location: "Aachener Str. 43, 10713 Berlin", description:"Hi! We became parents super late, most of our friends' children are already adults. We'd love to connect with families in our neighborhood with kids aged 3-6, preferably also 45+ but not only! :)")
 user_3.save!
 
-user_4 = User.create!(username: "brunhilde", password: "123456", email: "brunhilde@capybaras.com", location: "Wallenbergstraße 6, 10713 Berlin")
+user_4 = User.create!(username: "Julia", password: "123456", email: "julia@gmail.com", location: "Wallenbergstraße 6, 10713 Berlin", description: "Hello! Our daugther is going to school next year, she was diagnosed with ADHD at the age of 5, we are worried how she'll manage in school and we'd like to support her in the best possible way. If your kids have a similar problem, please reach out to us, we'd love to know your experiences!")
 user_4.save!
 
-user_5 = User.create!(username: "hartmut", password: "123456", email: "hartmut@capycapy.com", location: "Eschenstraße 5, 12161 Berlin")
+user_5 = User.create!(username: "Anna", password: "123456", email: "anna@gmail.com", location: "Eschenstraße 5, 12161 Berlin", description: "Any French speaking families who are trying vegan upbringing? Let's meet and exchange knowledge!")
 user_5.save!
 
-user_6 = User.create!(username: "hildegard", password: "123456", email: "hildegard@copacabana.com", location: "Taubertstraße 29C, 14193 Berlin")
+user_6 = User.create!(username: "Zuzanna", password: "123456", email: "zuzanna@gmail.com", location: "Taubertstraße 29C, 14193 Berlin", description:"I'm a single mom, new to Berlin. I'd love to meet with other Polish moms in the area. Also anyone here whose kid is also hyperactive? Let's support each other!")
 user_6.save!
 puts "Users created"
 puts "Creating events"
 #creating seed for events
 event1 = Event.create( name: "Labyrinth Kindermuseum",
    starting_date: Date.parse("10/02/2022"),
-   ending_date: Date.parse("23/02/2022"),
+   ending_date: Date.parse("10/02/2022"),
    starting_time: Time.parse("9:30"),
-   ending_time: Time.parse("17:30"),
-   description: "Are you looking for a museum that would help teach your kids a variety of activities where they can train their senses and at the same time, learn important life skills? If that is a yes, you should check out Labyrinth Kindermuseum.",
+   ending_time: Time.parse("11:30"),
+   description: "We're planning to go to Kindermuseum soon, we'd love some other kids and their parents to join us, the more the merrier! ",
    address: "Osloer Str. 12, 13359 Berlin",
-   free: true,
-   price: 0
+   free: false,
+   price: 5
   )
 event2 = Event.create(name: "Berlin Zoological Garden",
     starting_date: Date.parse("19/02/2022"),
-    ending_date: Date.parse("20/03/2022"),
-    starting_time: Time.parse("9:30"),
+    ending_date: Date.parse("19/03/2022"),
+    starting_time: Time.parse("11:30"),
     ending_time: Time.parse("17:30"),
-    description: "For children who are animal and plant lovers, heading over to Berlin Zoological Garden should be in your itinerary.",
+    description: "Any elephant lovers around here? Our daughter is obsessed with them and we'd love her to experience the zoo with other kids, join us!",
     address: "Hardenbergpl. 8, 10787 Berlin",
     free: false,
     price: 20
    )
-event10 = Event.create(name: "Legoland Discovery Centre",
+event10 = Event.create(name: "Relaxation techniques for hyperactive children",
     starting_date: Date.parse("13/03/2022"),
-    ending_date: Date.parse("15/03/2022"),
-    starting_time: Time.parse("9:30"),
+    ending_date: Date.parse("13/03/2022"),
+    starting_time: Time.parse("15:30"),
     ending_time: Time.parse("17:30"),
-    description: "If your child or yourself  is a LEGO fan, you should not miss out bringing them to Berlin’s Legoland Discovery Centre. ",
+    description: "Your child has been diagnosed with ADHD? Mine too! For years I have studied the best relaxation techniques that would help my son calm down when he needs it. Let me share them with you! ",
     address: "Potsdamer Str. 4, 10785 Berlin",
     free: true,
     price:0
    )
-event3 = Event.create(name: "Tierpark",
-    starting_date: Date.parse("18/03/2022"),
+event3 = Event.create(name: "Theatre group!",
+    starting_date: Date.parse("23/03/2022"),
     ending_date: Date.parse("23/03/2022"),
-    starting_time: Time.parse("9:30"),
-    ending_time: Time.parse("17:30"),
-    description: "If you want to check out the largest collection of animals in Europe, you may want to include Tierpark Berlin in your itinerary. ",
+    starting_time: Time.parse("17:00"),
+    ending_time: Time.parse("18:30"),
+    description: "My kids love to perform and they are looking for buddies to form a theater group! Meetings at our place weekly! ",
     address: "Am Tierpark 125, 10319 Berlin",
-    free: false,
-    price: 22.3
+    free: true,
+    price: 0
    )
-event4 = Event.create(name: "Natural History Museum",
+event4 = Event.create(name: "Jogging with strollers",
     starting_date: Date.parse("4/04/2022"),
-    ending_date: Date.parse("25/04/2022"),
-    starting_time: Time.parse("9:30"),
-    ending_time: Time.parse("17:30"),
-    description: "For kids who want to understand the natural world and its development, visiting the country’s Natural History Museum is a must.",
+    ending_date: Date.parse("4/04/2022"),
+    starting_time: Time.parse("10:30"),
+    ending_time: Time.parse("11:30"),
+    description: "We are forming a jogging group for parents! Come with your little one, bring a sports stroller and lets get active!",
     address: "Invalidenstraße 43, 10115 Berlin",
-    free: false,
-    price: 21.30
+    free: true,
+    price: 0
    )
 event5 = Event.create(name: "Tempelhofer Park",
     starting_date: Date.parse("01/04/2022"),
     ending_date: Date.parse("02/08/2022"),
     starting_time: Time.parse("9:30"),
     ending_time: Time.parse("17:30"),
-    description: "Want to have a fun picnic with your child after a long walk around Berlin? Why not make a stop at the Tempelhofer Park?",
+    description: "Want to have a fun picnic with your child? Why not make a stop at the Tempelhofer Park? We'll be there, playing games and having fun!",
     address: "Tempelhofer Damm, 12101 Berlin",
     free: true,
     price: 0
    )
 event6 = Event.create(name: "AquaDom and Sea Life",
-    starting_date: Date.parse("12/04/2022"),
-    ending_date: Date.parse("21/10/2022"),
+    starting_date: Date.parse("1/04/2022"),
+    ending_date: Date.parse("30/04/2022"),
     starting_time:Time.parse("9:30"),
     ending_time: Time.parse("17:30"),
-    description: "For children who love aquatic animals and the sea, visiting the AquaDom and Sea Life will blow their minds away.",
+    description: "We have 3 tickets to Aquadom valid until the end of the month but we'll not use it! It's a cool weekend activity for children, our daughter loved it! anyone interested?",
     address: "Spandauer Str. 3, 10178 Berlin",
     free: false,
     price: 30
@@ -116,12 +116,12 @@ event8 =Event.create(name: "Science Center Spectrum",
     free: true,
     price: 0
    )
-event9 = Event.create(name: "MACHmit! Museum for Children",
+event9 = Event.create(name: "MACHmit! Free drawing class",
     starting_date: Date.parse("01/03/2022"),
     ending_date: Date.parse("02/06/2022"),
-    starting_time: Time.parse("10:00"),
+    starting_time: Time.parse("17:00"),
     ending_time: Time.parse("18:30"),
-    description: "To cap off our top 10 kid-friendly attractions in Berlin is the MACHmit! Museum for Kids.",
+    description: "Children Museum is offering free drawing classes from March to June!",
     address: "Möckernstraße 26, 10963 Berlin",
     free: true,
     price: 0
@@ -141,7 +141,7 @@ event11 = Event.create(name: "Lily’s B-day party",
     ending_date: Date.parse("05/03/2022"),
     starting_time: Time.parse("13:00"),
     ending_time: Time.parse("18:00"),
-    description: "Join us the celebrate with Lily birthday",
+    description: "Lily's freaming about a biiiiiig dinosaur themed party! Please come to our garden and make her dream come true!",
     address: "Rothariweg 23, 12103 Berlin",
     free: true,
     price: 0
@@ -151,10 +151,10 @@ event11 = Event.create(name: "Lily’s B-day party",
     ending_date: Date.parse("06/03/2022"),
     starting_time: Time.parse("11:30"),
     ending_time: Time.parse("13:00"),
-    description: "Join us to disstress your baby",
+    description: "Popular newborn massage technique workshop! I'm a certified shantala therapist and will teach you the basics of this wonderful method to calm down your little one.",
     address: "Falkenberger Str., 13088 Berlin",
-    free: true,
-    price: 0
+    free: false,
+    price: 5
    )
 
    puts "Events created"
@@ -195,4 +195,3 @@ user_tag12 = UserTag.create(user_id: user_6.id, tag_id: tag6.id)
 user_tag13 = UserTag.create(user_id: user_6.id, tag_id: tag12.id)
 user_tag14 = UserTag.create(user_id: user_6.id, tag_id: tag8.id)
 puts "User tags created"
-
