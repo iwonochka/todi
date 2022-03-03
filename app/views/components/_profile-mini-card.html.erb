@@ -1,9 +1,13 @@
-<a href="<%profile_path(@user)%>">
+<% @users.each do |user| %>
+<a href="<%profile_path(user)%>">
 <div class="profile-mini-card">
-  <img class="avatar-large" src="profilepic1.jpg" />
+<% if user.photo.attached?%>
+  <%=cl_image_tag user.photo.key, class:"avatar-large"%>
+<%end%>
   <div class="profile-mini-card-infos">
-    <h2><%=@user.username%></h2>
-    <p><%=@user.description.truncate_words(9)%></p>
+    <h2><%=user.username%></h2>
+    <p><%=user.description.truncate_words(9)%></p>
   </div>
 </div>
 </a>
+<% end %>
