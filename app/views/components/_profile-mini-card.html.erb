@@ -1,6 +1,6 @@
 <% @users.each do |user| %>
 <a href="<%profile_path(user)%>">
-<div class="profile-mini-card">
+<div class="profile-mini-card" style="width: 90%">
 <% if user.photo.attached?%>
   <%=cl_image_tag user.photo.key, class:"avatar-large"%>
 <%end%>
