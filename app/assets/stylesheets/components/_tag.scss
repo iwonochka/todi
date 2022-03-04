@@ -1,10 +1,19 @@
 .tag {
   background-color: white;
   border-radius: 6px;
-  border: 1px solid $orange;
+  border: 2px solid $orange;
   font-size: 12px;
   color: $orange;
-  font-weight: lighter;
+  font-weight: 2px;
   box-shadow: none;
-  padding: auto, 8px;
+  padding: 3px 8px;
+  margin: 8px;
+}
+
+.keywords-container {
+  width: 80vw;
+  display: flex;
+  margin: auto;
+  justify-content: space-around;
+  flex-wrap: wrap;
 }

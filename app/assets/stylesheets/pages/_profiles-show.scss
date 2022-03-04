@@ -1,0 +1,41 @@
+.main-container {
+  background-color: rgb(240, 240, 240);
+}
+
+.profilepic-container {
+  background-color: white;
+  margin: 16px 16px;
+  border-radius: 4%;
+  padding: 4px;
+}
+
+.description-container {
+  background-color: white;
+  margin: 16px 16px;
+  border-radius: 3%;
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+// .description-container h2 {
+// }
+.keywords-container {
+  width: 80vw;
+  display: flex;
+  margin: auto;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 8px;
+}
+
+.username {
+  font: Roboto;
+  font-size: 20px;
+  text-align: center;
+}
+.btn-profile {
+  width: 50%;
+  margin: 0 auto;
+}
