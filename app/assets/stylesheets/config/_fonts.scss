@@ -3,8 +3,20 @@
 
 // Define fonts for body and headers
 $main-font: "Roboto", "Helvetica", "sans-serif";
-$headers-font: "Playfair Display", "Helvetica", "sans-serif";
 
+p {
+  font-family: "Roboto", "Helvetica", "sans-serif";
+  font-size: 18px;
+  font-weight: lighter;
+}
+h1 {
+  font-family: "Playfair Display", "Helvetica", "sans-serif";
+  font-size: 18px;
+}
+h2 {
+  font-family: "Roboto", "Helvetica", "sans-serif";
+  font-size: 18px !important;
+}
 // To use a font file (.woff) uncomment following lines
 // @font-face {
 //   font-family: "Font Name";
