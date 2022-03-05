@@ -52,13 +52,23 @@
 
 .searchbar {
   border-radius: 50px;
+  height: 42px;
+  border-style: solid;
+  border-width: 1px;
+  border-color: $light-gray;
+  padding: 8px 16px;
+  font-weight: lighter;
+  opacity: 0.7;
 }
 
 /*Resize the wrap to see the search bar change!*/
 .wrap{
-  width: 40%;
   position: absolute;
   top: 50%;
-  left: 50%;
+  left: 40%;
   transform: translate(-50%, -50%);
+}
+.btn-homepage {
+  position: absolute;
+  right: -80px;
 }
