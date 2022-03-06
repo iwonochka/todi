@@ -1,66 +1,55 @@
 <h1> playground for the filter </h1>
 
-<!--language family type activities and special needs-->
+<div id="demo">
+</div>
 
-<% activeTagsArray = [] %>
-<!-- Table -->
 <div>
-<input type="text" id="myInput" onkeyup="myFunction()" placeholder="What are you looking for?">
+<input type="text" id="myInput" onkeyup="liveSearch(event)" placeholder="What are you looking for?">
 </div>
 
-<div id="proposedTags">
-  <% list = ["French", "English", "Jogging", "Joggling", "Autism", "Single Mum", "Single Dad", "LGBTQ+"] %>
-  <% list.each do |item| %>
-    <div class="tagitem" onclick="makeActive(event)"> <%= item %> </div>
+<div>
+</div>
+
+<form id="proposedTags">
+  <% Tag.all.each do |item| %>
+    <label for="<%= item.name %>"><input class="tagitem" type="checkbox" id="<%= item.name %>"><%= item.name %></input></label>
   <% end %>
-</div>
+    <input id="SearchbarButton" type="submit" value="Search!" onclick="handelFormData(event)" />
+</form>
 
-<!--filter-->
 <script>
-  var input, filter, table, tagitem, word, i, txtValue;
+  var input, filter, table, tagitems, word, i, txtValue;
   input = document.getElementById("myInput");
-  typedletters = input.value.toUpperCase();
+  let typedletters = ""
   table = document.getElementById("proposedTags");
-  tagitem = table.getElementsByClassName("tagitem");
+  tagitems = table.querySelectorAll("label");
+  let tagItemsArray = [...tagitems]
 
-  function myFunction() {
-    var input, filter, table, tagitem, word, i, txtValue;
-    input = document.getElementById("myInput");
+  function handelFormData(event) {
+    event.preventDefault() // prevent default form bevaiour (<form action="/search" method="get">)
+    const form = document.getElementById('proposedTags')
+    const formData = [...form.querySelectorAll('input[type="checkbox"]:checked')].map(item => item.id)
+    console.log(formData)
+    // TODO: hide / show Capibars
+  }
+
+  function liveSearch(e) {
+    console.log(typedletters)
+    // console.log(tagitems)
     typedletters = input.value.toUpperCase();
-    table = document.getElementById("proposedTags");
-    tagitem = table.getElementsByClassName("tagitem");
-    // Loop through all table rows, and hide those who don't match the search query
-    for (i = 0; i < tagitem.length; i++) {
-      if (tagitem) {
-        txtValue = tagitem[i].textContent || tagitem[i].innerText;
+    console.log(typedletters)
+    for (i = 0; i < tagItemsArray.length; i++) {
+      // console.log(tagitems[i])
+      if (tagitems[i]) {
+        let txtValue = tagitems[i].innerText;
+        // console.log(txtValue)
         if (txtValue.toUpperCase().indexOf(typedletters) > -1) {
-          tagitem[i].style.display = "";
+          tagitems[i].style.display = "";
+          // show Capibara
         } else {
-          tagitem[i].style.display = "none";
+          tagitems[i].style.display = "none";
+          // hide Capibara
         }
-      }
-    }
-  }
-
-  function makeActive(e) {
-    console.log(e.target.className)
-    if (e.target.className == "tagitem active") {
-      e.target.className = "tagitem"
-    } else {
-      e.target.className += " active"
-    }
-  }
-
-  function getActiveTags(){
-    var input, filter, table, tagitem, word, i, txtValue;
-    input = document.getElementById("myInput");
-    typedletters = input.value.toUpperCase();
-    table = document.getElementById("proposedTags");
-    tagitem = table.getElementsByClassName("tagitem");
-    // Loop through all table rows, and hide those who don't match the search query
-    for (i = 0; i < tagitem.length; i++) {
-      if (tagitem.className == "tagitem active") {
-        activeTagsArray.push(tagitem)
       }
     }
   }

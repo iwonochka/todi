@@ -1,5 +1,8 @@
 class ProfilesController < ApplicationController
   def index
+    if params["tag-0"]
+      raise
+    end
     @users = User.all
 
     @markers = @users.geocoded.map do |user|
