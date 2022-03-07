@@ -41,27 +41,29 @@ user_6.save!
 puts "Users created"
 puts "Creating events"
 #creating seed for events
-event1 = Event.create( name: "Labyrinth Kindermuseum",
-   starting_date: Date.parse("10/02/2022"),
-   ending_date: Date.parse("10/02/2022"),
+event1 = Event.create!( name: "Labyrinth Kindermuseum",
+   starting_date: Date.parse("10/04/2022"),
+   ending_date: Date.parse("10/04/2022"),
    starting_time: Time.parse("9:30"),
    ending_time: Time.parse("11:30"),
    description: "We're planning to go to Kindermuseum soon, we'd love some other kids and their parents to join us, the more the merrier! ",
    address: "Osloer Str. 12, 13359 Berlin",
    free: false,
-   price: 5
+   price: 5,
+   user: user_4
   )
-event2 = Event.create(name: "Berlin Zoological Garden",
-    starting_date: Date.parse("19/02/2022"),
+event2 = Event.create!(name: "Berlin Zoological Garden",
+    starting_date: Date.parse("19/03/2022"),
     ending_date: Date.parse("19/03/2022"),
     starting_time: Time.parse("11:30"),
-    ending_time: Time.parse("17:30"),
+    ending_time: Time.parse("15:30"),
     description: "Any elephant lovers around here? Our daughter is obsessed with them and we'd love her to experience the zoo with other kids, join us!",
     address: "Hardenbergpl. 8, 10787 Berlin",
     free: false,
-    price: 20
+    price: 20,
+    user: user_5
    )
-event10 = Event.create(name: "Relaxation techniques for hyperactive children",
+event10 = Event.create!(name: "Relaxation techniques for hyperactive children",
     starting_date: Date.parse("13/03/2022"),
     ending_date: Date.parse("13/03/2022"),
     starting_time: Time.parse("15:30"),
@@ -69,59 +71,65 @@ event10 = Event.create(name: "Relaxation techniques for hyperactive children",
     description: "Your child has been diagnosed with ADHD? Mine too! For years I have studied the best relaxation techniques that would help my son calm down when he needs it. Let me share them with you! ",
     address: "Potsdamer Str. 4, 10785 Berlin",
     free: true,
-    price:0
+    price: 0,
+    user: user_1
    )
-event3 = Event.create(name: "Theatre group!",
+event3 = Event.create!(name: "Theatre group!",
     starting_date: Date.parse("23/03/2022"),
     ending_date: Date.parse("23/03/2022"),
     starting_time: Time.parse("17:00"),
     ending_time: Time.parse("18:30"),
-    description: "My kids love to perform and they are looking for buddies to form a theater group! Meetings at our place weekly! ",
+    description: "My kids love to perform and they are looking for buddies to form a theater group! Meetings at our place weekly!",
     address: "Am Tierpark 125, 10319 Berlin",
     free: true,
-    price: 0
+    price: 0,
+    user: user_2
    )
-event4 = Event.create(name: "Jogging with strollers",
+event4 = Event.create!(name: "Jogging with strollers",
     starting_date: Date.parse("4/04/2022"),
     ending_date: Date.parse("4/04/2022"),
     starting_time: Time.parse("10:30"),
     ending_time: Time.parse("11:30"),
-    description: "We are forming a jogging group for parents! Come with your little one, bring a sports stroller and lets get active!",
+    description: "We are forming a jogging group for parents! Come with your little one, bring a sports stroller and let's get active!",
     address: "Invalidenstraße 43, 10115 Berlin",
     free: true,
-    price: 0
+    price: 0,
+    user: user_6
    )
-event5 = Event.create(name: "Tempelhofer Park",
-    starting_date: Date.parse("01/04/2022"),
-    ending_date: Date.parse("02/08/2022"),
-    starting_time: Time.parse("9:30"),
+event5 = Event.create!(name: "Tempelhofer Park",
+    starting_date: Date.parse("01/05/2022"),
+    ending_date: Date.parse("01/05/2022"),
+    starting_time: Time.parse("11:30"),
     ending_time: Time.parse("17:30"),
-    description: "Want to have a fun picnic with your child? Why not make a stop at the Tempelhofer Park? We'll be there, playing games and having fun!",
+    description: "Want to join us for a fun picnic with your child? Why not make a stop at the Tempelhofer Park? We'll be there, playing games and having fun!",
     address: "Tempelhofer Damm, 12101 Berlin",
     free: true,
-    price: 0
+    price: 0,
+    user: user_3
    )
-event6 = Event.create(name: "AquaDom and Sea Life",
+event6 = Event.create!(name: "AquaDom and Sea Life",
     starting_date: Date.parse("1/04/2022"),
     ending_date: Date.parse("30/04/2022"),
     starting_time:Time.parse("9:30"),
     ending_time: Time.parse("17:30"),
-    description: "We have 3 tickets to Aquadom valid until the end of the month but we'll not use it! It's a cool weekend activity for children, our daughter loved it! anyone interested?",
+    description: "We have 3 extra tickets to Aquadom valid until the end of the month! It's a cool weekend activity for children, our daughter loves it! Anyone interested?",
     address: "Spandauer Str. 3, 10178 Berlin",
     free: false,
-    price: 30
+    price: 30,
+    user: user_4
    )
-event7 = Event.create(name: "Waldhochseilgarten Jungfernheide",
-    starting_date:Date.parse("17/06/2022"),
-    ending_date:Date.parse("12/06/2022"),
+event7 = Event.create!(name: "Waldhochseilgarten Jungfernheide",
+    starting_date:Date.parse("11/06/2022"),
+    ending_date:Date.parse("11/06/2022"),
     starting_time: Time.parse("9:00"),
     ending_time: Time.parse("17:00"),
-    description: "Want to challenge yourself and your kids into an obstacle course that would surely give you a workout? If that is a big yes, going to the Waldhochseilgarten Jungfernheide is a must!",
+    description: "We would love to meet other families at this amazing obstacle course!",
     address: "Heckerdamm 260, 13627 Berlin",
     free: false,
-    price: 10
+    price: 10,
+    user: user_2
    )
-event8 =Event.create(name: "Science Center Spectrum",
+event8 =Event.create!(name: "Science Center Spectrum",
     starting_date: Date.parse("02/06/2022"),
     ending_date: Date.parse("17/06/2022"),
     starting_time: Time.parse("9:00"),
@@ -129,9 +137,10 @@ event8 =Event.create(name: "Science Center Spectrum",
     description: "For kids who want to explore the vast world of science and technology, the Science Center Spectrum will definitely blow their mind away.",
     address: "Möckernstraße 26, 10963 Berlin",
     free: true,
-    price: 0
+    price: 0,
+    user: user_4
    )
-event9 = Event.create(name: "MACHmit! Free drawing class",
+event9 = Event.create!(name: "MACHmit! Free drawing class",
     starting_date: Date.parse("01/03/2022"),
     ending_date: Date.parse("02/06/2022"),
     starting_time: Time.parse("17:00"),
@@ -139,9 +148,10 @@ event9 = Event.create(name: "MACHmit! Free drawing class",
     description: "Children Museum is offering free drawing classes from March to June!",
     address: "Möckernstraße 26, 10963 Berlin",
     free: true,
-    price: 0
+    price: 0,
+    user: user_5
    )
-event11 = Event.create(name: "Baby Yoga",
+event11 = Event.create!(name: "Baby Yoga",
     starting_date: Date.parse("28/03/2022"),
     ending_date: Date.parse("28/03/2022"),
     starting_time: Time.parse("16:00"),
@@ -149,27 +159,30 @@ event11 = Event.create(name: "Baby Yoga",
     description: "Meet us at the entrance to Tempelhofer Feld at S-bahn Tempelhof at 16:00. Please bring your yoga matte. After class we still stay for half an hour to chat, feel free to join.",
     address: "Tempelhofer Damm, 12101 Berlin",
     free: true,
-    price: 0
+    price: 0,
+    user: user_5
    )
-event11 = Event.create(name: "Lily’s B-day party",
-    starting_date: Date.parse("05/03/2022"),
-    ending_date: Date.parse("05/03/2022"),
+event11 = Event.create!(name: "Lily’s B-day party",
+    starting_date: Date.parse("05/04/2022"),
+    ending_date: Date.parse("05/04/2022"),
     starting_time: Time.parse("13:00"),
     ending_time: Time.parse("18:00"),
-    description: "Lily's freaming about a biiiiiig dinosaur themed party! Please come to our garden and make her dream come true!",
+    description: "Lily's dreaming about a biiiiiig dinosaur themed party! Please come to our garden and make her dream come true!",
     address: "Rothariweg 23, 12103 Berlin",
     free: true,
-    price: 0
+    price: 0,
+    user: user_6
    )
-   event12 = Event.create(name: "Shantala massage class",
-    starting_date: Date.parse("06/03/2022"),
-    ending_date: Date.parse("06/03/2022"),
+   event12 = Event.create!(name: "Shantala massage class",
+    starting_date: Date.parse("06/04/2022"),
+    ending_date: Date.parse("06/04/2022"),
     starting_time: Time.parse("11:30"),
     ending_time: Time.parse("13:00"),
     description: "Popular newborn massage technique workshop! I'm a certified shantala therapist and will teach you the basics of this wonderful method to calm down your little one.",
     address: "Falkenberger Str., 13088 Berlin",
     free: false,
-    price: 5
+    price: 5,
+    user: user_1
    )
 
    puts "Events created"
@@ -210,3 +223,5 @@ user_tag12 = UserTag.create(user_id: user_6.id, tag_id: tag6.id)
 user_tag13 = UserTag.create(user_id: user_6.id, tag_id: tag12.id)
 user_tag14 = UserTag.create(user_id: user_6.id, tag_id: tag8.id)
 puts "User tags created"
+puts Tag.all
+puts Event.all
