@@ -1,16 +1,25 @@
 <% @users.each do |user| %>
   <%=link_to profile_path(user) do %>
-    <div class="profile-mini-card" style="width: 90%">
-      <% if user.photo.attached?%>
+  <div class="profile-mini-card" style="width: 90%">
+    <% if user.photo.attached?%>
+      <div>
         <%=cl_image_tag user.photo.key, class:"avatar-large"%>
-      <%end%>
-      <div class="profile-mini-card-infos">
-        <h2><%=user.username%></h2>
-        <p><%=user.description%></p>
-        <% user.tags.each do |usertag| %>
-          <p class="usertag-on-user"><%= usertag.name %></p>
-        <% end %>
       </div>
+    <% else %>
+    <div>
+      <%= image_tag("placeholder.png", class: 'avatar-large' )%>
     </div>
+    <%end%>
+    <div class="profile-mini-card-infos">
+      <h2><%=user.username%></h2>
+      <p><%=user.description%></p>
+      <% user.tags.each do |usertag| %>
+        <p class="usertag-on-user"><%= usertag.name %></p>
+      <% end %>
+    </div>
+    <div class="distance">
+      <p><%=user.distance_to("Berlin").truncate(1)%> km</p>
+    </div>
+  </div>
   <% end %>
  <% end %>

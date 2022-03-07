@@ -1,7 +1,9 @@
 .main-container {
   background-color: rgb(240, 240, 240);
 }
-
+.username {
+  justify-content: center;
+}
 .profilepic-container {
   background-color: white;
   margin: 16px 16px;
@@ -13,14 +15,16 @@
   background-color: white;
   margin: 16px 16px;
   border-radius: 3%;
-  padding: 8px;
+  padding: 16px;
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
+.profile-header {
+  font-size: 18px;
+  font-weight: 500;
+}
 
-// .description-container h2 {
-// }
 .keywords-container {
   width: 80vw;
   display: flex;
@@ -31,8 +35,6 @@
 }
 
 .username {
-  font: Roboto;
-  font-size: 20px;
   text-align: center;
 }
 .btn-profile {
