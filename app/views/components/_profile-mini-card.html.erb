@@ -1,13 +1,16 @@
 <% @users.each do |user| %>
   <%=link_to profile_path(user) do %>
-  <div class="profile-mini-card" style="width: 90%">
-    <% if user.photo.attached?%>
-      <%=cl_image_tag user.photo.key, class:"avatar-large"%>
-    <%end%>
+    <div class="profile-mini-card" style="width: 90%">
+      <% if user.photo.attached?%>
+        <%=cl_image_tag user.photo.key, class:"avatar-large"%>
+      <%end%>
       <div class="profile-mini-card-infos">
         <h2><%=user.username%></h2>
-        <p><%=user.description.truncate_words(9)%></p>
+        <p><%=user.description%></p>
+        <% user.tags.each do |usertag| %>
+          <p class="usertag-on-user"><%= usertag.name %></p>
+        <% end %>
       </div>
     </div>
   <% end %>
-<% end %>
+ <% end %>

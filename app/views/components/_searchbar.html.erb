@@ -1,5 +1,3 @@
-<h1> playground for the filter </h1>
-
 <div id="demo">
 </div>
 
@@ -7,18 +5,15 @@
 <input type="text" id="myInput" onkeyup="liveSearch(event)" placeholder="What are you looking for?">
 </div>
 
-<div>
-</div>
-
 <form id="proposedTags">
   <% Tag.all.each do |item| %>
     <label for="<%= item.name %>"><input class="tagitem" type="checkbox" id="<%= item.name %>"><%= item.name %></input></label>
   <% end %>
-    <input id="SearchbarButton" type="submit" value="Search!" onclick="handelFormData(event)" />
+    <input id="SearchbarButton" type="submit" value="Search!" class="btn btn-searchbar" onclick="handelFormData(event)"/>
 </form>
 
 <script>
-  var input, filter, table, tagitems, word, i, txtValue;
+  var input, table, i, txtValue, input;
   input = document.getElementById("myInput");
   let typedletters = ""
   table = document.getElementById("proposedTags");
@@ -27,10 +22,25 @@
 
   function handelFormData(event) {
     event.preventDefault() // prevent default form bevaiour (<form action="/search" method="get">)
+    const profileCards = document.querySelectorAll(".profile-mini-card")
+    let profileCardsArray = [...profileCards]
     const form = document.getElementById('proposedTags')
     const formData = [...form.querySelectorAll('input[type="checkbox"]:checked')].map(item => item.id)
-    console.log(formData)
-    // TODO: hide / show Capibars
+    console.log("search items", formData)
+
+    if (formData.length > 0) {
+      for (i = 0; i < profileCardsArray.length; i++) {
+        let profileTagsArray = [...profileCardsArray[i].querySelectorAll(".usertag-on-user")].map(tag => tag.innerText)
+            console.log("profile", profileTagsArray)
+        if (formData.every(searchItem => profileTagsArray.includes(searchItem))) {
+            console.log("MATCH")
+            profileCardsArray[i].style.display = "";
+        } else {
+          console.log("no match")
+            profileCardsArray[i].style.display = "none"
+        }
+      }
+    }
   }
 
   function liveSearch(e) {
@@ -53,5 +63,4 @@
       }
     }
   }
-
 </script>
