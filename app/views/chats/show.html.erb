@@ -1,7 +1,9 @@
 
-
 <div class="container chat" data-controller="chat-subscription" data-chat-subscription-chat-id-value="<%= @chat.id %>">
-  <h1>#<%= @chat.sender.username%></h1>
+  <div>
+    <div><%=cl_image_tag @chat.receiver.photo.key, class:"avatar-large"%></div>
+    <h1><%= @chat.receiver.username%></h1>
+  </div>
 
   <div class="messages" data-chat-subscription-target="messages" >
 
@@ -15,11 +17,11 @@
     html: {data: {chat_subscription_target: "form"}, class: "d-flex"} do |f|%>
     <%= f.input :content,
       label: false,
-      placeholder: "Message ##{@chat.sender.username}",
+      placeholder: "Message #{@chat.receiver.username}",
       wrapper_html: {class: "flex-grow-1"},
       input_html: {data: {chat_subscription_target: "input"}}
     %>
-    <%= f.submit "Send", class: "btn btn-primary" %>
+    <i class="fa-solid fa-paper-plane-top"<%= f.submit "Send", class: "btn btn-primary" %>></i>
     <% end %>
   </div>
 </div>

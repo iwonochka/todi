@@ -1,8 +1,8 @@
 
 
-<%= link_to "chat",   profile_chats_path(@user), method: :post %>
 
-<div class="main-container">
+
+<div class="profile-show-main-container">
 
   <div class="profilepic-container">
     <%# cl_image_tag @user.photo.key %>
@@ -25,7 +25,7 @@
         <p class="usertag-on-user-show"><%= tag.name %></p>
       <% end %>
     </div>
-    <a class="btn btn-pink btn-profile" href="<%# users_path %>">Connect</a>
+    <%= link_to "Connect",  profile_chats_path(@user), method: :post ,class: "btn btn-pink btn-profile" %>
   </div>
 
 
