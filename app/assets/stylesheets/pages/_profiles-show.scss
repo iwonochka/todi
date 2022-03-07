@@ -1,9 +1,11 @@
-.main-container {
+.profile-show-main-container {
   background-color: rgb(240, 240, 240);
 }
+
 .username {
   justify-content: center;
 }
+
 .profilepic-container {
   background-color: white;
   margin: 16px 16px;
@@ -20,6 +22,7 @@
   flex-direction: column;
   justify-content: center;
 }
+
 .profile-header {
   font-size: 18px;
   font-weight: 500;
