@@ -4,8 +4,8 @@ class Event < ApplicationRecord
   has_many :event_tags
   has_many :tags, through: :event_tags
 
-  # LINK TO USER PROFILEPIC?
-  # has_one_attached :photo
+  # LINK TO USER PROFILEPIC + TO EVENT PHOTO?
+  has_one_attached :photo
 
   validates :name, presence: true
   # validates :starting_date, presence: true

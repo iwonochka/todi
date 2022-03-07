@@ -1,12 +1,11 @@
 class EventsController < ApplicationController
   def index
     @events = Event.all
-
     @markers = @events.geocoded.map do |event|
       {
         lat: event.latitude,
         lng: event.longitude,
-        info_window: render_to_string(partial: "components/info_window", locals: { event: event })
+        info_window: render_to_string(partial: "components/event_window", locals: { event: event })
       }
     end
   end
