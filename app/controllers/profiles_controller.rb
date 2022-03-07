@@ -6,7 +6,7 @@ class ProfilesController < ApplicationController
       {
         lat: user.latitude,
         lng: user.longitude,
-        info_window: render_to_string(partial: "info_window", locals: { user: user })
+        info_window: render_to_string(partial: "components/info_window", locals: { user: user })
       }
     end
   end
