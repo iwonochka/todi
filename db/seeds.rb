@@ -6,6 +6,9 @@ Chat.destroy_all
 User.destroy_all
 Tag.destroy_all
 
+require 'time'
+require 'date'
+
 puts "Old seeds destroyed"
 puts "Creating users"
 
@@ -162,7 +165,7 @@ event11 = Event.create!(name: "Baby Yoga",
     price: 0,
     user: user_5
    )
-event11 = Event.create!(name: "Lily’s B-day party",
+event11 = Event.create!(name: "Lily’s dinosaur B-day party",
     starting_date: Date.parse("05/04/2022"),
     ending_date: Date.parse("05/04/2022"),
     starting_time: Time.parse("13:00"),
