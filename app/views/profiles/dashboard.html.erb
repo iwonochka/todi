@@ -1,0 +1,49 @@
+<div class="dashboard-container">
+
+  <div class="dashboard-header">
+    <div class= "user-info">
+    <h1><%= @user.username %></h1>
+    <p><%= @user.email%></p>
+    </div>
+    <%if @user.photo.attached? %>
+      <%= cl_image_tag(@user.photo.key, class: 'avatar-large avatar-chat') %>
+    <% else %>
+      <%= image_tag("placeholder.png", class: 'profilepic avatar-chat' ) %>
+    <% end %>
+  </div>
+
+  <div class="dashboard-paragraph">
+    <div>
+      <h2>About</h2>
+      <p><%= @user.description %></p>
+    </div>
+    <div class="edit">
+    <%= link_to profiles_path do %>
+      <%= image_tag "edit.png" %>
+    <% end %>
+    </div>
+  </div>
+
+    <div class="dashboard-paragraph">
+    <div>
+      <h2>Keywords</h2>
+      <div class="keywords-container">
+        <% @user.tags.each do |tag| %>
+          <p class="usertag-on-user"><%= tag.name %></p>
+        <% end %>
+      </div>
+    </div>
+    <div class="edit">
+      <%= link_to profiles_path do %>
+        <%= image_tag "edit.png" %>
+      <% end %>
+    </div>
+  </div>
+
+   <div class="dashboard-paragraph">
+    <div class="create-event">
+      <h2>Would you like to invite others to spend time together?</h2>
+      <%= link_to "Create event", new_event_path, class: "btn btn-pink btn-profile" %>
+    </div>
+  </div>
+</div>

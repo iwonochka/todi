@@ -11,4 +11,5 @@ Rails.application.routes.draw do
   end
   #get "profiles/:id", to: "profiles#show"
   get "/home", to: "pages#home"
+  get "/dashboard", to: "profiles#dashboard"
 end

@@ -1,27 +1,31 @@
-
-<div class="container chat" data-controller="chat-subscription" data-chat-subscription-chat-id-value="<%= @chat.id %>">
-  <div>
-    <div><%=cl_image_tag @chat.receiver.photo.key, class:"avatar-large"%></div>
+<div class="container chat" data-controller="chat-subscription" data-chat-subscription-chat-id-value="<%= @chat.id %>" data-chat-subscription-user-id-value="<%= current_user.id %>">
+  <div class= "chat-header">
+    <div><%=cl_image_tag @chat.receiver.photo.key, class:"avatar-large avatar-chat"%></div>
     <h1><%= @chat.receiver.username%></h1>
   </div>
 
   <div class="messages" data-chat-subscription-target="messages" >
 
     <% @chat.messages.each do |message| %>
-      <%= render "messages/message", message: message %>
+      <% if message.user == current_user %>
+        <%= render 'messages/message', message: message, css_class: 'outgoing' %>
+      <% else %>
+        <%= render 'messages/message', message: message, css_class: 'incoming' %>
+      <% end %>
     <% end %>
   </div>
-  <div>
+  <div class= "message-box">
    <%= simple_form_for [@chat, @message],
     remote: true,
-    html: {data: {chat_subscription_target: "form"}, class: "d-flex"} do |f|%>
+    html: {data: {chat_subscription_target: "form"}, class: "d-flex message-window"} do |f|%>
     <%= f.input :content,
       label: false,
       placeholder: "Message #{@chat.receiver.username}",
       wrapper_html: {class: "flex-grow-1"},
-      input_html: {data: {chat_subscription_target: "input"}}
-    %>
-    <i class="fa-solid fa-paper-plane-top"<%= f.submit "Send", class: "btn btn-primary" %>></i>
+      input_html: {data: {chat_subscription_target: "input"}, autocomplete: 'off'} %>
+      <%= button_tag type: 'submit', class: "btn btn-homepage btn-chat" do %>
+        <i class='fas fa-paper-plane'></i>
+      <% end %>
     <% end %>
   </div>
 </div>
