@@ -6,4 +6,8 @@ class Tag < ApplicationRecord
   has_many :events, through: :event_tags
 
   validates :name, presence: true
+
+  def index
+    @tags = Tag.all
+  end
 end
