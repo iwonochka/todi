@@ -6,9 +6,9 @@
         <%=cl_image_tag event.user.photo.key, class:"avatar-large"%>
       </div>
     <% else %>
-    <div>
-      <%= image_tag("placeholder.png", class: 'avatar-large' )%>
-    </div>
+      <div>
+        <%= image_tag("placeholder.png", class: 'avatar-large' )%>
+      </div>
     <%end%>
     <div class="event-mini-card-infos">
       <h2><%=event.name%></h2>
@@ -32,9 +32,8 @@
 
 <%# Display FREE or PRICE %>
     <div class="eventprice">
-      <% if !free %>
+      <% if !event.free %>
         <p><%= event.price %> €</p>
-        <% end %>
       <% else %>
         <p>free</p>
       <% end %>
