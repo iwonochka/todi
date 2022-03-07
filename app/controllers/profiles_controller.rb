@@ -1,6 +1,11 @@
 class ProfilesController < ApplicationController
   def index
-    @users = User.all
+    if params[:query].present?
+      @users = User.search_by_username_and_location(params[:query])
+    else
+      @users = User.all
+    end
+
 
     @markers = @users.geocoded.map do |user|
       {

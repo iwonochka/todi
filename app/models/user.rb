@@ -12,4 +12,11 @@ class User < ApplicationRecord
   # validates :location, presence: true
   geocoded_by :location
   after_validation :geocode, if: :will_save_change_to_location?
+  #Enabling search action
+  include PgSearch::Model
+  pg_search_scope :search_by_username_and_location,
+    against: [ :username, :location],
+    using: {
+      tsearch: { prefix: true }
+    }
 end
