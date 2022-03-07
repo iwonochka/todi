@@ -1,7 +1,5 @@
-<div id="message-<%= message.id %>">
-  <small>
-    <strong><%= message.user.username %></strong>
-    <i><%= message.created_at.strftime("%a %b %e at %l:%M %p") %></i>
-  </small>
-  <p><%= message.content %></p>
+
+<div class="message <%= local_assigns[:css_class] %>" id="message-<%= message.id %>" data-sender-id="<%= message.user.id %>">
+  <p class="message-text"><%= message.content %></p>
+  <p class="datetime-chat"><%= message.created_at.strftime("%b %e at %l:%M %p") %></p>
 </div>

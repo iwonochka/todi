@@ -1,12 +1,18 @@
 
 <div class="navbar">
-  <a href="#" class="active">
-  <%= image_tag "message_icon.png" %>
-  </a>
+
   <%= link_to profiles_path do %>
-  <%= image_tag "map_icon.png" %>
+    <%= image_tag "message_icon.png" %>
   <% end %>
-  <a href="#">
-  <%= image_tag "more_options_icon.png" %>
-  </a>
+  <%= link_to profiles_path do %>
+    <%= image_tag "map_icon.png" %>
+  <% end %>
+  <div class="dropup">
+    <a href="#" class="dropbtn"><%= image_tag "more_options_icon.png"%></a>
+      <div class="dropup-content">
+        <%= link_to "Your profile", dashboard_path(current_user) %>
+        <%= link_to "Create event", new_event_path%>
+        <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+      </div>
+  </div>
 </div>

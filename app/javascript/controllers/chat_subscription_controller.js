@@ -2,19 +2,31 @@ import { Controller } from "@hotwired/stimulus"
 import consumer from "../channels/consumer"
 
 export default class extends Controller {
-  static values = { chatId: Number }
+  static values = { chatId: Number, userId: Number }
   static targets = ["messages", "form", "input"]
 
   connect() {
-
+    console.log(this.userIdValue)
     this.channel = consumer.subscriptions.create(
       { channel: "ChatChannel", id: this.chatIdValue },
-      { received: data => this.insertMessageScrollDownAndResetForm(data)}
-      )
+      { received: (data) =>{
+        console.log(data)
+
+        this.insertMessageScrollDownAndResetForm(data)}
+      })
       console.log(`Subscribed to the chat with the id ${this.chatIdValue}.`)
     }
     insertMessageScrollDownAndResetForm(data) {
-      this.messagesTarget.insertAdjacentHTML("beforeend", data)
+      let userId = parseInt(data.match(/data-sender-id="(\d+)"/)[1])
+      //parseInt(userId[1]))
+      let element = document.createElement('div')
+      element.innerHTML = data
+      if(this.userIdValue == userId){
+        element.classList.add('outgoing')
+      } else {
+        element.classList.add('incoming')
+      }
+      this.messagesTarget.insertAdjacentElement("beforeend", element)
       this.messagesTarget.scrollTo(0, this.messagesTarget.scrollHeight)
       this.inputTarget.value = "";
   }
