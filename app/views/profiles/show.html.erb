@@ -22,7 +22,7 @@
     <h2>Keywords</h2>
     <div class="keywords-container">
       <% @user.tags.each do |tag| %>
-        <p class="usertag-on-user"><%= tag.name %></p>
+        <p class="usertag-on-user-show"><%= tag.name %></p>
       <% end %>
     </div>
     <a class="btn btn-pink btn-profile" href="<%# users_path %>">Connect</a>

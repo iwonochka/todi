@@ -1,4 +1,4 @@
-.usertag-on-user {
+.usertag-on-user-show {
   background-color: white;
   border-radius: 6px;
   border: 2px solid $orange;
@@ -9,6 +9,19 @@
   padding: 3px 8px;
   margin: 8px;
 }
+
+.usertag-on-user-index {
+  background-color: white;
+  border-radius: 6px;
+  border: 2px solid $orange;
+  font-size: 10px;
+  color: $orange;
+  font-weight: 2px;
+  box-shadow: none;
+  padding: 2px 8px;
+  margin: 8px;
+}
+
 
 .keywords-container {
   width: 80vw;
