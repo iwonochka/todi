@@ -14,11 +14,9 @@ export default class extends Controller {
       console.log(`Subscribed to the chat with the id ${this.chatIdValue}.`)
     }
     insertMessageScrollDownAndResetForm(data) {
-      console.log("hello")
       this.messagesTarget.insertAdjacentHTML("beforeend", data)
       this.messagesTarget.scrollTo(0, this.messagesTarget.scrollHeight)
-      console.log(this.inputTarget.value)
-    this.inputTarget.value = "";
+      this.inputTarget.value = "";
   }
   disconnect() {
     console.log("Unsubscribed from the chatroom")
