@@ -1,4 +1,8 @@
 class ChatsController < ApplicationController
+  def index
+    @chats = Chat.where(receiver: current_user).or(Chat.where(sender: current_user))
+  end
+
   def show
     @chat = Chat.find(params[:id])
     @message = Message.new
