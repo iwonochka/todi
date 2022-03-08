@@ -18,7 +18,9 @@ class ParticipantsController < ApplicationController
 
   def index
     @my_events = Event.where(user_id: current_user.id)
+    @user = current_user
   end
+
 
   private
 
