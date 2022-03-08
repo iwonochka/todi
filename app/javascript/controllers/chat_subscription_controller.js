@@ -21,6 +21,7 @@ export default class extends Controller {
       //parseInt(userId[1]))
       let element = document.createElement('div')
       element.innerHTML = data
+      element.classList.add('custom-message')
       if(this.userIdValue == userId){
         element.classList.add('outgoing')
       } else {
