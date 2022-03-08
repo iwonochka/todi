@@ -31,11 +31,6 @@
   bottom: 0;
 }
 
-.search {
-  width: 100%;
-  position: relative;
-  display: flex;
-}
 
 .searchTerm {
   width: 100%;
@@ -49,7 +44,7 @@
 }
 
 .searchTerm:focus{
-  color: #00B4CC;
+  color: $dark-pink;
 }
 
 .searchbar {
@@ -80,18 +75,17 @@
 
 }
 .btn-homepage:disabled {
-    opacity: 1;
-    color: white;
-    font-weight: lighter;
-    background-color: $pink;
-  }
+  opacity: 1;
+  color: white;
+  font-weight: lighter;
+  background-color: $pink;
+}
 .homepage-keywords-container {
-  width: 80vw;
+  width: 120%;
   display: flex;
-  margin: 4px;
+  margin: 0px;
   justify-content: left;
   flex-wrap: wrap;
-  padding: 4px;
 }
 
 .container-searchbar {
@@ -99,10 +93,8 @@
 
 .search {
   display: flex;
-  align-items: center;
-  margin: auto;
   margin-top: 16px;
   margin-bottom: 16px;
-  border-radius: 6px;
   position: relative;
+  width: 90%;
 }

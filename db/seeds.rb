@@ -41,6 +41,11 @@ user_6 = User.create!(username: "Zuzanna", password: "123456", email: "zuzanna@g
 photo6 = URI.open('app/assets/images/zuzanna.jpg')
 user_6.photo.attach(io: photo6, filename: 'zuzanna.jpg', content_type: 'image/jpg')
 user_6.save!
+
+user_7 = User.create!(username: "Franky", password: "123456", email: "franky1@gmail.com", location: "Winklers Pl. 8, 22767 Hamburg", description:"I'm a single Dad, new in Hamburg. I'd love to meet with other Finish parents in the area. Also anyone here whose kid is also hyperactive? Let's support each other!")
+photo7 = URI.open('app/assets/images/zuzanna.jpg')
+user_7.photo.attach(io: photo7, filename: 'zuzanna.jpg', content_type: 'image/jpg')
+user_7.save!
 puts "Users created"
 puts "Creating events"
 
