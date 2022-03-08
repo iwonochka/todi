@@ -11,11 +11,14 @@
     </div>
     <%end%>
     <div class="profile-mini-card-infos">
-      <h2><%=user.username%></h2>
-      <p><%=user.description%></p>
+      <div class="username-mini-card">
+        <h2><%=user.username%></h2>
+      </div>
+      <div class="homepage-keywords-container">
       <% user.tags.each do |usertag| %>
-        <p class="usertag-on-user"><%= usertag.name %></p>
+        <p class="usertag-on-user-index"><%= usertag.name %></p>
       <% end %>
+      </div>
     </div>
     <div class="distance">
       <p><%=user.distance_to("Berlin").truncate(1)%> km</p>
