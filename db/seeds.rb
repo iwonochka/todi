@@ -43,153 +43,205 @@ user_6.photo.attach(io: photo6, filename: 'zuzanna.jpg', content_type: 'image/jp
 user_6.save!
 puts "Users created"
 puts "Creating events"
+
 #creating seed for events
 event1 = Event.create!( name: "Labyrinth Kindermuseum",
-   starting_date: Date.parse("10/04/2022"),
-   ending_date: Date.parse("10/04/2022"),
-   starting_time: Time.parse("9:30"),
-   ending_time: Time.parse("11:30"),
-   description: "We're planning to go to Kindermuseum soon, we'd love some other kids and their parents to join us, the more the merrier! ",
-   address: "Osloer Str. 12, 13359 Berlin",
-   free: false,
-   price: 5,
-   user: user_4
+  starting_date: Date.parse("10/04/2022"),
+  ending_date: Date.parse("10/04/2022"),
+  starting_time: Time.parse("9:30"),
+  ending_time: Time.parse("11:30"),
+  description: "We're planning to go to Kindermuseum soon, we'd love some other kids and their parents to join us, the more the merrier! ",
+  address: "Osloer Str. 12, 13359 Berlin",
+  free: false,
+  price: 5,
+  user: user_4
   )
-event2 = Event.create!(name: "Berlin Zoological Garden",
-    starting_date: Date.parse("19/03/2022"),
-    ending_date: Date.parse("19/03/2022"),
-    starting_time: Time.parse("11:30"),
-    ending_time: Time.parse("15:30"),
-    description: "Any elephant lovers around here? Our daughter is obsessed with them and we'd love her to experience the zoo with other kids, join us!",
-    address: "Hardenbergpl. 8, 10787 Berlin",
-    free: false,
-    price: 20,
-    user: user_5
-   )
-event10 = Event.create!(name: "Relaxation techniques for hyperactive children",
-    starting_date: Date.parse("13/03/2022"),
-    ending_date: Date.parse("13/03/2022"),
-    starting_time: Time.parse("15:30"),
-    ending_time: Time.parse("17:30"),
-    description: "Your child has been diagnosed with ADHD? Mine too! For years I have studied the best relaxation techniques that would help my son calm down when he needs it. Let me share them with you! ",
-    address: "Potsdamer Str. 4, 10785 Berlin",
-    free: true,
-    price: 0,
-    user: user_1
-   )
-event3 = Event.create!(name: "Theatre group!",
-    starting_date: Date.parse("23/03/2022"),
-    ending_date: Date.parse("23/03/2022"),
-    starting_time: Time.parse("17:00"),
-    ending_time: Time.parse("18:30"),
-    description: "My kids love to perform and they are looking for buddies to form a theater group! Meetings at our place weekly!",
-    address: "Am Tierpark 125, 10319 Berlin",
-    free: true,
-    price: 0,
-    user: user_2
-   )
-event4 = Event.create!(name: "Jogging with strollers",
-    starting_date: Date.parse("4/04/2022"),
-    ending_date: Date.parse("4/04/2022"),
-    starting_time: Time.parse("10:30"),
-    ending_time: Time.parse("11:30"),
-    description: "We are forming a jogging group for parents! Come with your little one, bring a sports stroller and let's get active!",
-    address: "Invalidenstraße 43, 10115 Berlin",
-    free: true,
-    price: 0,
-    user: user_6
-   )
-event5 = Event.create!(name: "Tempelhofer Park",
-    starting_date: Date.parse("01/05/2022"),
-    ending_date: Date.parse("01/05/2022"),
-    starting_time: Time.parse("11:30"),
-    ending_time: Time.parse("17:30"),
-    description: "Want to join us for a fun picnic with your child? Why not make a stop at the Tempelhofer Park? We'll be there, playing games and having fun!",
-    address: "Tempelhofer Damm, 12101 Berlin",
-    free: true,
-    price: 0,
-    user: user_3
-   )
-event6 = Event.create!(name: "AquaDom and Sea Life",
-    starting_date: Date.parse("1/04/2022"),
-    ending_date: Date.parse("30/04/2022"),
-    starting_time:Time.parse("9:30"),
-    ending_time: Time.parse("17:30"),
-    description: "We have 3 extra tickets to Aquadom valid until the end of the month! It's a cool weekend activity for children, our daughter loves it! Anyone interested?",
-    address: "Spandauer Str. 3, 10178 Berlin",
-    free: false,
-    price: 30,
-    user: user_4
-   )
-event7 = Event.create!(name: "Waldhochseilgarten Jungfernheide",
-    starting_date:Date.parse("11/06/2022"),
-    ending_date:Date.parse("11/06/2022"),
-    starting_time: Time.parse("9:00"),
-    ending_time: Time.parse("17:00"),
-    description: "We would love to meet other families at this amazing obstacle course!",
-    address: "Heckerdamm 260, 13627 Berlin",
-    free: false,
-    price: 10,
-    user: user_2
-   )
-event8 =Event.create!(name: "Science Center Spectrum",
-    starting_date: Date.parse("02/06/2022"),
-    ending_date: Date.parse("17/06/2022"),
-    starting_time: Time.parse("9:00"),
-    ending_time: Time.parse("17:00"),
-    description: "For kids who want to explore the vast world of science and technology, the Science Center Spectrum will definitely blow their mind away.",
-    address: "Möckernstraße 26, 10963 Berlin",
-    free: true,
-    price: 0,
-    user: user_4
-   )
-event9 = Event.create!(name: "MACHmit! Free drawing class",
-    starting_date: Date.parse("01/03/2022"),
-    ending_date: Date.parse("02/06/2022"),
-    starting_time: Time.parse("17:00"),
-    ending_time: Time.parse("18:30"),
-    description: "Children Museum is offering free drawing classes from March to June!",
-    address: "Möckernstraße 26, 10963 Berlin",
-    free: true,
-    price: 0,
-    user: user_5
-   )
-event11 = Event.create!(name: "Baby Yoga",
-    starting_date: Date.parse("28/03/2022"),
-    ending_date: Date.parse("28/03/2022"),
-    starting_time: Time.parse("16:00"),
-    ending_time: Time.parse("17:00"),
-    description: "Meet us at the entrance to Tempelhofer Feld at S-bahn Tempelhof at 16:00. Please bring your yoga matte. After class we still stay for half an hour to chat, feel free to join.",
-    address: "Tempelhofer Damm, 12101 Berlin",
-    free: true,
-    price: 0,
-    user: user_5
-   )
-event11 = Event.create!(name: "Lily’s dinosaur B-day party",
-    starting_date: Date.parse("05/04/2022"),
-    ending_date: Date.parse("05/04/2022"),
-    starting_time: Time.parse("13:00"),
-    ending_time: Time.parse("18:00"),
-    description: "Lily's dreaming about a biiiiiig dinosaur themed party! Please come to our garden and make her dream come true!",
-    address: "Rothariweg 23, 12103 Berlin",
-    free: true,
-    price: 0,
-    user: user_6
-   )
-   event12 = Event.create!(name: "Shantala massage class",
-    starting_date: Date.parse("06/04/2022"),
-    ending_date: Date.parse("06/04/2022"),
-    starting_time: Time.parse("11:30"),
-    ending_time: Time.parse("13:00"),
-    description: "Popular newborn massage technique workshop! I'm a certified shantala therapist and will teach you the basics of this wonderful method to calm down your little one.",
-    address: "Falkenberger Str., 13088 Berlin",
-    free: false,
-    price: 5,
-    user: user_1
-   )
+photo1 = URI.open('app/assets/images/eventpic_labyrinth_kindermuseum.jpg')
+event1.photo.attach(io: photo1, filename: 'eventpic_labyrinth_kindermuseum', content_type: 'image/jpg')
+event1.save!
 
-   puts "Events created"
-   puts "Creating tags"
+event2 = Event.create!(name: "Berlin Zoological Garden",
+  starting_date: Date.parse("19/03/2022"),
+  ending_date: Date.parse("19/03/2022"),
+  starting_time: Time.parse("11:30"),
+  ending_time: Time.parse("15:30"),
+  description: "Any elephant lovers around here? Our daughter is obsessed with them and we'd love her to experience the zoo with other kids, join us!",
+  address: "Hardenbergpl. 8, 10787 Berlin",
+  free: false,
+  price: 20,
+  user: user_5
+  )
+photo2 = URI.open('app/assets/images/eventpic_zoo.jpg')
+event2.photo.attach(io: photo2, filename: 'eventpic_zoo', content_type: 'image/jpg')
+event2.save!
+
+event3 = Event.create!(name: "Relaxation techniques for hyperactive children",
+  starting_date: Date.parse("13/03/2022"),
+  ending_date: Date.parse("13/03/2022"),
+  starting_time: Time.parse("15:30"),
+  ending_time: Time.parse("17:30"),
+  description: "Your child has been diagnosed with ADHD? Mine too! For years I have studied the best relaxation techniques that would help my son calm down when he needs it. Let me share them with you! ",
+  address: "Potsdamer Str. 4, 10785 Berlin",
+  free: true,
+  price: 0,
+  user: user_1
+  )
+photo3 = URI.open('app/assets/images/eventpic_relaxation.jpg')
+event3.photo.attach(io: photo3, filename: 'eventpic_relaxation', content_type: 'image/jpg')
+event3.save!
+
+event4 = Event.create!(name: "Theatre group!",
+  starting_date: Date.parse("23/03/2022"),
+  ending_date: Date.parse("23/03/2022"),
+  starting_time: Time.parse("17:00"),
+  ending_time: Time.parse("18:30"),
+  description: "My kids love to perform and they are looking for buddies to form a theater group! Meetings at our place weekly!",
+  address: "Am Tierpark 125, 10319 Berlin",
+  free: true,
+  price: 0,
+  user: user_2
+  )
+photo4 = URI.open('app/assets/images/eventpic_theater.jpg')
+event4.photo.attach(io: photo4, filename: 'eventpic_theater', content_type: 'image/jpg')
+event4.save!
+
+event5 = Event.create!(name: "Jogging with strollers",
+  starting_date: Date.parse("4/04/2022"),
+  ending_date: Date.parse("4/04/2022"),
+  starting_time: Time.parse("10:30"),
+  ending_time: Time.parse("11:30"),
+  description: "We are forming a jogging group for parents! Come with your little one, bring a sports stroller and let's get active!",
+  address: "Invalidenstraße 43, 10115 Berlin",
+  free: true,
+  price: 0,
+  user: user_6
+  )
+photo5 = URI.open('app/assets/images/eventpic_jogging.jpg')
+event5.photo.attach(io: photo5, filename: 'eventpic_jogging', content_type: 'image/jpg')
+event5.save!
+
+event6 = Event.create!(name: "Tempelhofer Park",
+  starting_date: Date.parse("01/05/2022"),
+  ending_date: Date.parse("01/05/2022"),
+  starting_time: Time.parse("11:30"),
+  ending_time: Time.parse("17:30"),
+  description: "Want to join us for a fun picnic with your child? Why not make a stop at the Tempelhofer Park? We'll be there, playing games and having fun!",
+  address: "Tempelhofer Damm, 12101 Berlin",
+  free: true,
+  price: 0,
+  user: user_3
+  )
+photo6 = URI.open('app/assets/images/eventpic_tempelhofer_feld.jpg')
+event6.photo.attach(io: photo6, filename: 'eventpic_tempelhofer_feld', content_type: 'image/jpg')
+event6.save!
+
+event7 = Event.create!(name: "AquaDom and Sea Life",
+  starting_date: Date.parse("1/04/2022"),
+  ending_date: Date.parse("30/04/2022"),
+  starting_time:Time.parse("9:30"),
+  ending_time: Time.parse("17:30"),
+  description: "We have 3 extra tickets to Aquadom valid until the end of the month! It's a cool weekend activity for children, our daughter loves it! Anyone interested?",
+  address: "Spandauer Str. 3, 10178 Berlin",
+  free: false,
+  price: 30,
+  user: user_4
+   )
+photo7 = URI.open('app/assets/images/eventpic_aquadom.jpg')
+event7.photo.attach(io: photo7, filename: 'eventpic_aquadom', content_type: 'image/jpg')
+event7.save!
+
+event8 = Event.create!(name: "Waldhochseilgarten Jungfernheide",
+  starting_date:Date.parse("11/06/2022"),
+  ending_date:Date.parse("11/06/2022"),
+  starting_time: Time.parse("9:00"),
+  ending_time: Time.parse("17:00"),
+  description: "We would love to meet other families at this amazing obstacle course!",
+  address: "Heckerdamm 260, 13627 Berlin",
+  free: false,
+  price: 10,
+  user: user_2
+  )
+photo8 = URI.open('app/assets/images/eventpic_waldhochseilgarten.jpg')
+event8.photo.attach(io: photo8, filename: 'eventpic_waldhochseilgarten', content_type: 'image/jpg')
+event8.save!
+
+event9 =Event.create!(name: "Science Center Spectrum",
+  starting_date: Date.parse("02/06/2022"),
+  ending_date: Date.parse("17/06/2022"),
+  starting_time: Time.parse("9:00"),
+  ending_time: Time.parse("17:00"),
+  description: "For kids who want to explore the vast world of science and technology, the Science Center Spectrum will definitely blow their mind away.",
+  address: "Möckernstraße 26, 10963 Berlin",
+  free: true,
+  price: 0,
+  user: user_4
+  )
+photo9 = URI.open('app/assets/images/eventpic_science_center.jpg')
+event9.photo.attach(io: photo9, filename: 'eventpic_science_center', content_type: 'image/jpg')
+event9.save!
+
+event10 = Event.create!(name: "MACHmit! Free drawing class",
+  starting_date: Date.parse("01/03/2022"),
+  ending_date: Date.parse("02/06/2022"),
+  starting_time: Time.parse("17:00"),
+  ending_time: Time.parse("18:30"),
+  description: "Children Museum is offering free drawing classes from March to June!",
+  address: "Möckernstraße 26, 10963 Berlin",
+  free: true,
+  price: 0,
+  user: user_5
+  )
+photo10 = URI.open('app/assets/images/eventpic_machmit_drawing.jpg')
+event10.photo.attach(io: photo10, filename: 'eventpic_machmit_drawing', content_type: 'image/jpg')
+event10.save!
+
+event11 = Event.create!(name: "Baby Yoga",
+  starting_date: Date.parse("28/03/2022"),
+  ending_date: Date.parse("28/03/2022"),
+  starting_time: Time.parse("16:00"),
+  ending_time: Time.parse("17:00"),
+  description: "Meet us at the entrance to Tempelhofer Feld at S-bahn Tempelhof at 16:00. Please bring your yoga matte. After class we still stay for half an hour to chat, feel free to join.",
+  address: "Tempelhofer Damm, 12101 Berlin",
+  free: true,
+  price: 0,
+  user: user_5
+  )
+photo11 = URI.open('app/assets/images/eventpic_baby_yoga.jpg')
+event11.photo.attach(io: photo11, filename: 'eventpic_baby_yoga', content_type: 'image/jpg')
+event11.save!
+
+event12 = Event.create!(name: "Lily’s dinosaur B-day party",
+  starting_date: Date.parse("05/04/2022"),
+  ending_date: Date.parse("05/04/2022"),
+  starting_time: Time.parse("13:00"),
+  ending_time: Time.parse("18:00"),
+  description: "Lily's dreaming about a biiiiiig dinosaur themed party! Please come to our garden and make her dream come true!",
+  address: "Rothariweg 23, 12103 Berlin",
+  free: true,
+  price: 0,
+  user: user_6
+  )
+photo12 = URI.open('app/assets/images/eventpic_bday_dinosaur.jpg')
+event12.photo.attach(io: photo12, filename: 'eventpic_bday_dinosaur', content_type: 'image/jpg')
+event12.save!
+
+event13 = Event.create!(name: "Shantala massage class",
+  starting_date: Date.parse("06/04/2022"),
+  ending_date: Date.parse("06/04/2022"),
+  starting_time: Time.parse("11:30"),
+  ending_time: Time.parse("13:00"),
+  description: "Popular newborn massage technique workshop! I'm a certified shantala therapist and will teach you the basics of this wonderful method to calm down your little one.",
+  address: "Falkenberger Str., 13088 Berlin",
+  free: false,
+  price: 5,
+  user: user_1
+  )
+photo13 = URI.open('app/assets/images/eventpic_shantala.jpg')
+event13.photo.attach(io: photo13, filename: 'eventpic_shantala', content_type: 'image/jpg')
+event13.save!
+
+puts "Events created"
+puts "Creating tags"
 
 tag1 = Tag.create(name: "English")
 tag2 = Tag.create(name: "German")
