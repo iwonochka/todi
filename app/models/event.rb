@@ -3,7 +3,7 @@ class Event < ApplicationRecord
 
   has_many :event_tags
   has_many :tags, through: :event_tags
-  has_many :participants
+  has_many :participants, dependent: :destroy
   has_many :users, through: :participants
   # LINK TO USER PROFILEPIC + TO EVENT PHOTO?
   has_one_attached :photo
