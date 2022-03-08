@@ -20,6 +20,13 @@ class EventsController < ApplicationController
 
   def create
     @event = Event.new(event_params)
+    @event.user = current_user
+
+    if @event.save
+      redirect_to @event, notice: 'Your event was successfully created.'
+    else
+      render :new
+    end
   end
 
   def edit
