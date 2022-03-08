@@ -10,6 +10,7 @@
     </div>
 
     <div class="event-short-description-container">
+
       <h2><%= @event.name %></h2>
       <div class="event-date-and-time">
       <%# if ending_date != starting_date, display ending_date %>
@@ -21,22 +22,27 @@
         <% end %>
         <p><%= @event.starting_time.strftime("%H:%M") %>-<%= @event.ending_time.strftime("%H:%M") %></p>
       </div>
-    </div>
+      <div>
+        <%=cl_image_tag @event.user.photo.key, class:"avatar-large"%>
+      </div>
 
-    <div class="eventprice">
-      <% if !@event.free %>
-        <p><%= @event.price %> €</p>
-      <% else %>
-        <p>free</p>
-      <% end %>
+      <div class="eventprice">
+        <% if !@event.free %>
+          <p><%= @event.price %> €</p>
+        <% else %>
+          <p>free</p>
+        <% end %>
+      </div>
+
     </div>
 
   </div>
-
-<%= link_to "Add to calendar", new_event_participant_path(@event), class: "btn" %>
 
   <div class="event-long-description-container">
+    <h2>About the event:</h2>
+    <p><%= @event.description %></p>
   </div>
 
+  <%= link_to "Add to calendar", new_event_participant_path(@event), class: "btn" %>
 
 </div>
