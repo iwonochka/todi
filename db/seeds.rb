@@ -57,7 +57,7 @@ event1 = Event.create!( name: "Labyrinth Kindermuseum",
   user: user_4
   )
 photo1 = URI.open('app/assets/images/eventpic_labyrinth_kindermuseum.jpg')
-event1.photo.attach(io: photo1, filename: 'eventpic_labyrinth_kindermuseum.jpg', content_type: 'image/jpg')
+event1.photo.attach(io: photo1, filename: 'eventpic_labyrinth_kindermuseum', content_type: 'image/jpg')
 event1.save!
 
 event2 = Event.create!(name: "Berlin Zoological Garden",
@@ -72,7 +72,7 @@ event2 = Event.create!(name: "Berlin Zoological Garden",
   user: user_5
   )
 photo2 = URI.open('app/assets/images/eventpic_zoo.jpg')
-event2.photo.attach(io: photo2, filename: 'eventpic_zoo.jpg', content_type: 'image/jpg')
+event2.photo.attach(io: photo2, filename: 'eventpic_zoo', content_type: 'image/jpg')
 event2.save!
 
 event3 = Event.create!(name: "Relaxation techniques for hyperactive children",
@@ -221,7 +221,7 @@ event12 = Event.create!(name: "Lily’s dinosaur B-day party",
   price: 0,
   user: user_6
   )
-photo12 = URI.open('app/assets/images/eventpic_bday_dinosaur')
+photo12 = URI.open('app/assets/images/eventpic_bday_dinosaur.jpg')
 event12.photo.attach(io: photo12, filename: 'eventpic_bday_dinosaur', content_type: 'image/jpg')
 event12.save!
 
@@ -236,7 +236,7 @@ event13 = Event.create!(name: "Shantala massage class",
   price: 5,
   user: user_1
   )
-photo13 = URI.open('app/assets/images/eventpic_shantala')
+photo13 = URI.open('app/assets/images/eventpic_shantala.jpg')
 event13.photo.attach(io: photo13, filename: 'eventpic_shantala', content_type: 'image/jpg')
 event13.save!
 
