@@ -1,15 +1,15 @@
 <div id="demo">
 </div>
 
-<div>
-<input type="text" id="myInput" onkeyup="liveSearch(event)" placeholder="What are you looking for?">
+<div class="search">
+  <input type="text" id="myInput" onkeyup="liveSearch(event)" placeholder="What are you looking for?">
+  <input id="SearchbarButton" type="submit" value="Search!" class="btn btn-searchbar" onclick="handelFormData(event)"/>
 </div>
 
 <form id="proposedTags">
   <% Tag.all.each do |item| %>
-    <label for="<%= item.name %>"><input class="tagitem" type="checkbox" id="<%= item.name %>"><%= item.name %></input></label>
+    <label for="<%= item.name %>" style="display:none;"><input class="tagitem" type="checkbox" id="<%= item.name %>"><%= item.name %></input></label>
   <% end %>
-    <input id="SearchbarButton" type="submit" value="Search!" class="btn btn-searchbar" onclick="handelFormData(event)"/>
 </form>
 
 <script>
@@ -30,7 +30,8 @@
 
     if (formData.length > 0) {
       for (i = 0; i < profileCardsArray.length; i++) {
-        let profileTagsArray = [...profileCardsArray[i].querySelectorAll(".usertag-on-user")].map(tag => tag.innerText)
+        console.log(profileCardsArray[i])
+        let profileTagsArray = [...profileCardsArray[i].querySelectorAll(".usertag-on-user-index")].map(tag => tag.innerText)
             console.log("profile", profileTagsArray)
         if (formData.every(searchItem => profileTagsArray.includes(searchItem))) {
             console.log("MATCH")
@@ -47,18 +48,14 @@
     console.log(typedletters)
     // console.log(tagitems)
     typedletters = input.value.toUpperCase();
-    console.log(typedletters)
     for (i = 0; i < tagItemsArray.length; i++) {
       // console.log(tagitems[i])
       if (tagitems[i]) {
         let txtValue = tagitems[i].innerText;
-        // console.log(txtValue)
-        if (txtValue.toUpperCase().indexOf(typedletters) > -1) {
-          tagitems[i].style.display = "";
-          // show Capibara
+        if (txtValue.toUpperCase().startsWith(typedletters)) {
+          tagitems[i].style.display = ""
         } else {
           tagitems[i].style.display = "none";
-          // hide Capibara
         }
       }
     }

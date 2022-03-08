@@ -76,7 +76,21 @@
 .homepage-keywords-container {
   width: 80vw;
   display: flex;
+  margin: 4px;
   justify-content: left;
   flex-wrap: wrap;
   padding: 4px;
+}
+
+.container-searchbar {
+}
+
+.search {
+  display: flex;
+  align-items: center;
+  margin: auto;
+  margin-top: 16px;
+  margin-bottom: 16px;
+  border-radius: 6px;
+  position: relative;
 }
