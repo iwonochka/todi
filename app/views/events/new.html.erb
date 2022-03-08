@@ -1,0 +1,16 @@
+<div class="new-event-form">
+  <div class="form-centered">
+    <%= simple_form_for(@event) do |f| %>
+      <%= f.input :name%>
+      <%= f.input :starting_date%>
+        <%= f.input :ending_date%>
+        <%= f.input :starting_time%>
+        <%= f.input :ending_time%>
+        <%= f.input :description %>
+        <%= f.input :address %>
+        <%= f.input :free %>
+        <%= f.input :price %>
+       <%= f.input :photo, as: :file %>
+      <%= f.submit 'Add Event', class: "booking-button btn btn-success"%>
+    <% end %>
+  </div>
