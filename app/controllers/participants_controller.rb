@@ -17,8 +17,20 @@ class ParticipantsController < ApplicationController
   end
 
   def index
-    @my_events = Event.where(user_id: current_user.id)
+    @my_events = Participant.where(user_id: current_user.id)
+    @my_events = @my_events.map(&:event)
+    @user = current_user
   end
+
+  def destroy
+    @event = Event.find(params[:event_id])
+    @participant = Participant.find(params[:id])
+    @participant.user = current_user
+    @participant.destroy
+    redirect_to event_path(@event)
+    flash[:alert] = "Event removed from your calender"
+  end
+
 
   private
 

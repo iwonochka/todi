@@ -12,7 +12,7 @@ class EventsController < ApplicationController
 
   def show
     @event = Event.find(params[:id])
-    @participant = Participant.new
+    @participant = Participant.where(event: @event, user: current_user)
   end
 
   def new
