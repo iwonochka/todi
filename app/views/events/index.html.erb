@@ -1,14 +1,13 @@
-<%= render 'components/searchbar' %>
-
 <div class="event-index-main-container">
-
-
-
 
   <div class="orange-buttons-container">
   </div>
 
   <div class="map-container d-flex justify-content-center">
+
+    <%= link_to "People", profiles_path, class: "btn-people btn-orange btn" %>
+    <%= button_to "Events", events_path, class: "btn-events btn-orange btn", disabled: true %>
+
     <div class="map" style="width: 90%; height: 400px;"
       data-controller="mapbox"
       data-mapbox-markers-value="<%= @markers.to_json %>"
@@ -17,7 +16,9 @@
   </div>
 
   <div class="event-mini-card-container">
+    <div class="container-searchbar">
+      <%= render 'components/searchbar' %>
+    </div>
     <%= render 'components/event-mini-card' %>
   </div>
-
 </div>
