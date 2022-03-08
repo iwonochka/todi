@@ -5,9 +5,7 @@
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
   align-items: center;
-  margin: auto;
-  margin-top: 16px;
-  margin-bottom: 16px;
+  margin: 16px;
   border-radius: 6px;
   position: relative;
 }
@@ -16,8 +14,7 @@
   font-size: 16px;
   line-height: 1.4;
   opacity: .7;
-  margin-bottom: 0;
-  margin-top: 8px;
+  margin: 0;
   text-decoration: none !important;
   font-family: Roboto;
   font-weight: lighter;
@@ -32,4 +29,24 @@
 .event-mini-card-infos {
   // width: 65%;
   padding: 12px;
+  height: 120px;
+}
+
+.event-mini-card-name {
+  padding: 12px;
+}
+
+.event-date-time-price {
+  display: inline;
+  overflow: hidden;
+}
+
+.event-date-and-time {
+  float: left;
+
+}
+
+.eventprice {
+  float: right;
+  overflow: hidden;
 }
