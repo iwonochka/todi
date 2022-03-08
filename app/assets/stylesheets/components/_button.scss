@@ -2,7 +2,7 @@
   background-color: $pink;
   font-family: Roboto;
   color: white;
-  border: 1px solid white;
+  border: 1px solid white !important;
   padding: 8px 24px;
   border-radius: 50px;
   font-weight: lighter;
@@ -11,10 +11,11 @@
 
 .btn :hover {
   font-weight: 500px;
+  color: white !important;
 }
 
 .btn-pink {
-  background-color: $pink;
+  background-color: $dark-pink;
 
 }
 .btn-orange {

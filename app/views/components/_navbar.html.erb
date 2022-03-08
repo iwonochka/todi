@@ -1,7 +1,7 @@
 
 <div class="navbar">
 
-  <%= link_to profiles_path do %>
+  <%= link_to chats_path(current_user) do %>
     <%= image_tag "message_icon.png" %>
   <% end %>
   <%= link_to profiles_path do %>
@@ -10,8 +10,8 @@
   <div class="dropup">
     <a href="#" class="dropbtn"><%= image_tag "more_options_icon.png"%></a>
       <div class="dropup-content">
-        <%= link_to "Your profile", dashboard_path(current_user) %>
-        <%= link_to "Create event", new_event_path%>
+        <%= link_to "My profile", dashboard_path(current_user) %>
+        <%= link_to "My events", event_path(current_user)%>
         <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
       </div>
   </div>
