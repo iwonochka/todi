@@ -5,6 +5,7 @@
 
 .top-bar {
   position: relative;
+  background-color: white;
 }
 
 .homepage-background {
@@ -14,6 +15,7 @@
   background-size: cover;
   background-position: top;
   padding: 100px 0;
+  background-color: white;
 }
 
 .homepage-logo{
@@ -63,6 +65,8 @@
 
 /*Resize the wrap to see the search bar change!*/
 .wrap{
+  display: flex;
+  justify-content: center;
   position: absolute;
   top: 50%;
   left: 40%;
@@ -71,8 +75,16 @@
 .btn-homepage {
   position: absolute;
   right: -80px;
-}
+  top: 0px;
+  background-color: $dark-pink;
 
+}
+.btn-homepage:disabled {
+    opacity: 1;
+    color: white;
+    font-weight: lighter;
+    background-color: $pink;
+  }
 .homepage-keywords-container {
   width: 80vw;
   display: flex;
