@@ -6,7 +6,6 @@ class ProfilesController < ApplicationController
       @users = User.all
     end
 
-
     @markers = @users.geocoded.map do |user|
       {
         lat: user.latitude,
@@ -18,6 +17,7 @@ class ProfilesController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    @chat = (Chat.where(sender:@user).or(Chat.where(receiver: @user))).and(Chat.where(sender:current_user).or(Chat.where(receiver: current_user))).first
   end
 
   def dashboard

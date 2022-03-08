@@ -21,6 +21,10 @@
         <p class="usertag-on-user-show"><%= tag.name %></p>
       <% end %>
     </div>
+    <% if @chat %>
+       <%= link_to "continue chating", chat_path(@chat) ,class: "btn btn-pink btn-profile" %>
+       <% else %>
     <%= link_to "Connect",  profile_chats_path(@user), method: :post ,class: "btn btn-pink btn-profile" %>
+    <% end %>
   </div>
 </div>
