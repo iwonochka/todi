@@ -1,29 +1,23 @@
-
-.eventpic-container {
-  margin: 16px 16px;
-}
-
 .eventpic {
-  object-fit: cover;
+  border-radius: 6px;
   height: 400px;
-}
-
-.event-short-description-container {
-  background-color: white;
-  margin: 16px 16px;
-  border-radius: 3%;
-  padding: 16px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  width: 350px; //needs to be flexible to phone screen
+  padding: 0;
+  margin: 16px;
+  margin-bottom: 0;
 }
 
 .event-long-description-container {
-  background-color: white;
-  margin: 16px 16px;
-  border-radius: 3%;
-  padding: 16px;
-  // display: flex;
-  // flex-direction: column;
-  justify-content: center;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  margin: 16px;
+  border-radius: 6px;
+  padding: 12px;
+}
+
+.btn-event {
+width: 60%;
+margin: 16px auto;
+text-align: center;
+display: block;
 }

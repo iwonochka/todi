@@ -9,33 +9,45 @@
       <% end %>
     </div>
 
-    <div class="event-short-description-container">
-
-      <h2><%= @event.name %></h2>
-      <div class="event-date-and-time">
-      <%# if ending_date != starting_date, display ending_date %>
-        <% if @event.ending_date != @event.starting_date %>
-          <p><%= @event.starting_date.strftime("%a %d %B") %> - <%= @event.ending_date.strftime("%a %d %B") %></p>
-        <%# else display only starting_date %>
-        <% else %>
-          <p><%= @event.starting_date.strftime("%a %d %B") %></p>
-        <% end %>
-        <p><%= @event.starting_time.strftime("%H:%M") %>-<%= @event.ending_time.strftime("%H:%M") %></p>
-      </div>
+  <div class="event-mini-card">
+    <% if @event.user.photo.attached?%>
       <div>
-        <%=cl_image_tag @event.user.photo.key, class:"avatar-large"%>
+        <%= cl_image_tag @event.user.photo.key, class:"avatar-large" %>
       </div>
+    <% else %>
+      <div>
+        <%= image_tag("placeholder.png", class: 'avatar-large' )%>
+      </div>
+    <%end%>
+    <div class="event-mini-card-infos">
+      <h2><%= @event.name %></h2>
 
-      <div class="eventprice">
-        <% if !@event.free %>
-          <p><%= @event.price %> €</p>
-        <% else %>
-          <p>free</p>
-        <% end %>
-      </div>
+      <% @event.tags.each do |eventtag| %>
+        <p class="eventtag-on-event"><%= eventtag.name %></p>
+      <% end %>
 
     </div>
 
+    <%# Display event start/end date + start/end time %>
+    <div class="event-date-and-time">
+      <%# if ending_date != starting_date, display ending_date %>
+      <% if @event.ending_date != @event.starting_date %>
+        <p><%= @event.starting_date.strftime("%a %d %B") %> - <%= event.ending_date.strftime("%a %d %B") %></p>
+      <%# else display only starting_date %>
+      <% else %>
+        <p><%= @event.starting_date.strftime("%a %d %B") %></p>
+      <% end %>
+      <p><%= @event.starting_time.strftime("%H:%M") %>-<%= @event.ending_time.strftime("%H:%M") %></p>
+    </div>
+
+    <%# Display FREE or PRICE %>
+    <div class="eventprice">
+      <% if !@event.free %>
+        <p><%= @event.price %> €</p>
+      <% else %>
+        <p>free</p>
+      <% end %>
+    </div>
   </div>
 
   <div class="event-long-description-container">
@@ -44,9 +56,9 @@
   </div>
 
   <% if @participant.exists? %>
-    <%= link_to "Remove from calendar", event_participant_path(@event, @participant.first), class: "btn", method: :delete %>
+    <%= link_to "Remove from calendar", event_participant_path(@event, @participant.first), class: "btn btn-pink btn-event", method: :delete %>
   <% else %>
-    <%= link_to "Add to calendar", new_event_participant_path(@event), class: "btn" %>
+    <%= link_to "Add to calendar", event_participants_path(@event), class: "btn btn-pink btn-event", method: :post %>
   <% end %>
 
 </div>
