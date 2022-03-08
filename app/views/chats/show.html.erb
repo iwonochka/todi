@@ -23,7 +23,7 @@
       placeholder: "Message #{@chat.receiver.username}",
       wrapper_html: {class: "flex-grow-1"},
       input_html: {data: {chat_subscription_target: "input"}, autocomplete: 'off'} %>
-      <%= button_tag type: 'submit', class: "btn btn-homepage btn-chat" do %>
+      <%= button_tag type: 'submit', class: "btn btn-chat" do %>
         <i class='fas fa-paper-plane'></i>
       <% end %>
     <% end %>
