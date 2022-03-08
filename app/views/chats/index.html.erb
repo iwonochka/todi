@@ -1,9 +1,19 @@
-<% @chats.each do |chat| %>
-<div>
-<% if chat.receiver == current_user %>
-<%= link_to chat.sender.username,  chat_path(chat)%>
-<% else %>
-<%= link_to chat.receiver.username,  chat_path(chat)%>
-<% end %>
-</div>
-<% end %>
+<div class="dashboard-container">
+
+  <div class="dashboard-header">
+    <div class= "user-info">
+    <h1><%= @user.username %></h1>
+    <p><%= @user.email%></p>
+    </div>
+    <%if @user.photo.attached? %>
+      <%= cl_image_tag(@user.photo.key, class: 'avatar-large avatar-chat') %>
+    <% else %>
+      <%= image_tag("placeholder.png", class: 'profilepic avatar-chat' ) %>
+    <% end %>
+  </div>
+
+  <div class="dashboard-paragraph">
+    <div>
+     <%= render 'components/chat-mini-card' %>
+    </div>
+  </div>
