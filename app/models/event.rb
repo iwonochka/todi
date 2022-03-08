@@ -3,7 +3,8 @@ class Event < ApplicationRecord
 
   has_many :event_tags
   has_many :tags, through: :event_tags
-
+  has_many :participants, dependent: :destroy
+  has_many :users, through: :participants
   # LINK TO USER PROFILEPIC + TO EVENT PHOTO?
   has_one_attached :photo
 
@@ -18,4 +19,11 @@ class Event < ApplicationRecord
   # validates :price, presence: true
   geocoded_by :address
   after_validation :geocode, if: :will_save_change_to_address?
+  #Enabling search action
+  include PgSearch::Model
+  pg_search_scope :search_by_name_and_description,
+    against: [ :name, :description],
+    using: {
+      tsearch: { prefix: true }
+    }
 end

@@ -43,6 +43,10 @@
     <p><%= @event.description %></p>
   </div>
 
-  <%= link_to "Add to calendar", new_event_participant_path(@event), class: "btn" %>
+  <% if @participant.exists? %>
+    <%= link_to "Remove from calendar", event_participant_path(@event, @participant.first), class: "btn", method: :delete %>
+  <% else %>
+    <%= link_to "Add to calendar", new_event_participant_path(@event), class: "btn" %>
+  <% end %>
 
 </div>
