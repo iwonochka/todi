@@ -1,0 +1,29 @@
+
+.eventpic-container {
+  margin: 16px 16px;
+}
+
+.eventpic {
+  object-fit: cover;
+}
+
+
+.event-short-description-container {
+  background-color: white;
+  margin: 16px 16px;
+  border-radius: 3%;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.event-long-description-container {
+  background-color: white;
+  margin: 16px 16px;
+  border-radius: 3%;
+  padding: 16px;
+  // display: flex;
+  // flex-direction: column;
+  justify-content: center;
+}

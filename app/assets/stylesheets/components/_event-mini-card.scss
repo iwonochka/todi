@@ -1,0 +1,35 @@
+.event-mini-card {
+  overflow: hidden;
+  height: 120px;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+  margin: auto;
+  margin-top: 16px;
+  margin-bottom: 16px;
+  border-radius: 6px;
+  position: relative;
+}
+
+.event-mini-card p {
+  font-size: 16px;
+  line-height: 1.4;
+  opacity: .7;
+  margin-bottom: 0;
+  margin-top: 8px;
+  text-decoration: none !important;
+  font-family: Roboto;
+  font-weight: lighter;
+}
+
+.event-mini-card h2 {
+  text-decoration: none !important;
+  font-family: Roboto;
+  font-size: 18px;
+}
+
+.event-mini-card-infos {
+  // width: 65%;
+  padding: 12px;
+}
