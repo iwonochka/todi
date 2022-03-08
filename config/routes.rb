@@ -5,11 +5,14 @@ Rails.application.routes.draw do
   resources :profiles, only: [:index, :show] do
     resources :chats, only: [:create]
   end
-  resources :events, only: [:index, :show, :new, :create, :update]
+  resources :events, only: [:index, :show, :new, :create, :update] do
+    resources :participants, only: [:new, :create]
+  end
   resources :chats, only: [:show, :index] do
     resources :messages, only: [:create]
   end
   #get "profiles/:id", to: "profiles#show"
+  resources :participants, only: [:show, :index]
   get "/home", to: "pages#home"
   get "/dashboard", to: "profiles#dashboard"
 end

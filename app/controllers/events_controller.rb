@@ -12,6 +12,7 @@ class EventsController < ApplicationController
 
   def show
     @event = Event.find(params[:id])
+    @participant = Participant.new
   end
 
   def new
@@ -20,6 +21,13 @@ class EventsController < ApplicationController
 
   def create
     @event = Event.new(event_params)
+    @event.user = current_user
+
+    if @event.save
+      redirect_to @event, notice: 'Your event was successfully created.'
+    else
+      render :new
+    end
   end
 
   def edit
@@ -27,7 +35,7 @@ class EventsController < ApplicationController
   end
 
   def update
-    if user == current_user
+    if @event.user == current_user
       @event = Event.find(params[:id])
       @event.update(event_params)
       redirect_to event_path(@event)
