@@ -1,9 +1,9 @@
 class ProfilesController < ApplicationController
   def index
     if params[:query].present?
-      @users = User.search_by_username_and_location(params[:query])
+      @users = User.where.not(id: current_user).search_by_username_and_location(params[:query])
     else
-      @users = User.all
+      @users = User.where.not(id: current_user)
     end
 
     @markers = @users.geocoded.map do |user|
