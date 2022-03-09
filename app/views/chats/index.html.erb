@@ -1,4 +1,4 @@
-<div class="dashboard-container">
+<div class="dashboard-container-chat">
 
   <div class="dashboard-header">
     <div class= "user-info">
@@ -11,9 +11,10 @@
       <%= image_tag("placeholder.png", class: 'profilepic avatar-chat' ) %>
     <% end %>
   </div>
-
+  <h2 class="chat-index-header">My conversations:</h2>
   <div class="dashboard-paragraph">
-    <div>
+    <div class="container">
      <%= render 'components/chat-mini-card' %>
     </div>
   </div>
+</div>
