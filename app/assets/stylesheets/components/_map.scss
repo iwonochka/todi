@@ -5,7 +5,17 @@
 .mapboxgl-popup-content {
   text-align: center;
   font-family: "Roboto";
+  border-radius: 10px;
 }
+
+.mapboxgl-popup-content h2 {
+  font-size: 14px;
+}
+
+.mapboxgl-popup-content p {
+  font-size: 14px;
+}
+
 
 .map {
   position: sticky;
