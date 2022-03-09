@@ -34,7 +34,7 @@
   justify-content: space-around;
   align-items: center;
   .btn {
-    width: 70%;
+    min-width: fit-content;
     height: fit-content;
   }
   h2 {
