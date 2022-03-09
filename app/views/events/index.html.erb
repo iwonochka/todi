@@ -5,10 +5,9 @@
 
   <div class="map-container d-flex justify-content-center">
 
-    <%= link_to "People", profiles_path, class: "btn-people btn-orange btn" %>
-    <%= button_to "Events", events_path, class: "btn-events btn-orange btn", disabled: true %>
+    <%= link_to "Show people", profiles_path, class: "btn-people btn-orange btn" %>
 
-    <div class="map" style="width: 90%; height: 400px;"
+    <div class="map" style="width: 100%; height: 400px;"
       data-controller="mapbox"
       data-mapbox-markers-value="<%= @markers.to_json %>"
       data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
@@ -17,8 +16,25 @@
 
   <div class="event-mini-card-container">
     <div class="container-searchbar">
-      <%= render 'components/searchbar' %>
+      <div class="wrap">
+    <%= form_tag events_path, method: :get do %>
+      <div class="search">
+        <div>
+          <%= text_field_tag :query,
+            params[:query],
+            class: "searchTerm",
+            placeholder: "Search Events ",
+            class: "searchbar"
+          %>
+        </div>
+        <div>
+          <%= submit_tag "Search", class: "btn btn-homepage" %>
+        </div>
+      </div>
+    <% end %>
     </div>
+  </div>
+  <div>
     <%= render 'components/event-mini-card' %>
   </div>
 </div>

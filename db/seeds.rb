@@ -14,42 +14,42 @@ puts "Creating users"
 
 user_1 = User.create!(username: "Charlotte", password: "123456", email: "charlotte@gmail.com", location: "Reichenberger Straße 158, 10999 Berlin", description: "We're proud moms of 1yrs old Laura and we'd love to meet other queer families in our area! Let us know if you'd like to hang out!" )
 photo1 = URI.open('app/assets/images/charlotte.jpg')
-user_1.photo.attach(io: photo1, filename: 'charlotte.jpg', content_type: 'image/jpg')
+user_1.photo.attach(io: photo1, filename: 'charlotte', content_type: 'image/jpg')
 user_1.save!
 
 user_2 = User.create!(username: "Yusuf", password: "123456", email: "yusuf@gmail.com", location: "Oberhaardter Weg 18, 14193 Berlin", description: "I'm a single dad from Jordan, new to Berlin. I'd love to meet other Arabic speaking parents and exchange advice, spend some time together!")
 photo2 = URI.open('app/assets/images/yusuf.jpg')
-user_2.photo.attach(io: photo2, filename: 'yusuf.jpg', content_type: 'image/jpg')
+user_2.photo.attach(io: photo2, filename: 'yusuf', content_type: 'image/jpg')
 user_2.save!
 
 user_3 = User.create!(username: "Silke", password: "123456", email: "silke@gmail.com", location: "Aachener Str. 43, 10713 Berlin", description:"Hi! We became parents super late, most of our friends' children are already adults. We'd love to connect with families in our neighborhood with kids aged 3-6, preferably also 45+ but not only! :)")
 photo3 = URI.open('app/assets/images/silke.jpg')
-user_3.photo.attach(io: photo3, filename: 'silke.jpg', content_type: 'image/jpg')
+user_3.photo.attach(io: photo3, filename: 'silke', content_type: 'image/jpg')
 user_3.save!
 
 user_4 = User.create!(username: "Julia", password: "123456", email: "julia@gmail.com", location: "Wallenbergstraße 6, 10713 Berlin", description: "Hello! Our daugther is going to school next year, she was diagnosed with ADHD at the age of 5, we are worried how she'll manage in school and we'd like to support her in the best possible way. If your kids have a similar problem, please reach out to us, we'd love to know your experiences!")
 photo4 = URI.open('app/assets/images/julia.jpg')
-user_4.photo.attach(io: photo4, filename: 'julia.jpg', content_type: 'image/jpg')
+user_4.photo.attach(io: photo4, filename: 'julia', content_type: 'image/jpg')
 user_4.save!
 
 user_5 = User.create!(username: "Anna", password: "123456", email: "anna@gmail.com", location: "Eschenstraße 5, 12161 Berlin", description: "Any French speaking families who are trying vegan upbringing? Let's meet and exchange knowledge!")
 photo5 = URI.open('app/assets/images/anna.jpg')
-user_5.photo.attach(io: photo5, filename: 'anna.jpg', content_type: 'image/jpg')
+user_5.photo.attach(io: photo5, filename: 'anna', content_type: 'image/jpg')
 user_5.save!
 
-user_6 = User.create!(username: "Zuzanna", password: "123456", email: "zuzanna@gmail.com", location: "Taubertstraße 29C, 14193 Berlin", description:"I'm a single mom, new to Berlin. I'd love to meet with other Polish moms in the area. Also anyone here whose kid is also hyperactive? Let's support each other!")
+user_6 = User.create!(username: "Zuzanna", password: "123456", email: "zuzanna@gmail.com", location: "Taubertstraße 29C, 14193 Berlin", description: "I'm a single mom, new to Berlin. I'd love to meet with other Polish moms in the area. Also anyone here whose kid is also hyperactive? Let's support each other!")
 photo6 = URI.open('app/assets/images/zuzanna.jpg')
-user_6.photo.attach(io: photo6, filename: 'zuzanna.jpg', content_type: 'image/jpg')
+user_6.photo.attach(io: photo6, filename: 'zuzanna', content_type: 'image/jpg')
 user_6.save!
 
-user_7 = User.create!(username: "Franky", password: "123456", email: "franky1@gmail.com", location: "Winklers Pl. 8, 22767 Hamburg", description:"I'm a single Dad, new in Hamburg. I'd love to meet with other Finish parents in the area. Also anyone here whose kid is also hyperactive? Let's support each other!")
-photo7 = URI.open('app/assets/images/zuzanna.jpg')
-user_7.photo.attach(io: photo7, filename: 'zuzanna.jpg', content_type: 'image/jpg')
+user_7 = User.create!(username: "Franky", password: "123456", email: "franky@gmail.com", location: "Winklers Pl. 8, 22767 Hamburg", description: "I'm a single dad, new in Hamburg, and I have an 8 year-old daughter who loves football, climbing and painting. We would love to meet other English-speaking families in the area.")
+photo7 = URI.open('app/assets/images/franky.jpg')
+user_7.photo.attach(io: photo7, filename: 'franky', content_type: 'image/jpg')
 user_7.save!
-puts "Users created"
-puts "Creating events"
 
-#creating seed for events
+# puts "Users created"
+# puts "Creating events"
+
 event1 = Event.create!( name: "Labyrinth Kindermuseum",
   starting_date: Date.parse("10/04/2022"),
   ending_date: Date.parse("10/04/2022"),

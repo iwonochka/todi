@@ -5,8 +5,8 @@
   <input id="SearchbarButton" type="submit" value="Search!" class="btn btn-searchbar" onclick="handelFormData(event)"/>
 </div>
 
-<form id="proposedTags">
-  <%# TODO: source available tags from data %>
+<form id="proposedTags" class="border-0">
+
   <% Tag.all.each do |item| %>
     <label for="<%= item.name %>" style="display:none;"><input class="tagitem" type="checkbox" id="<%= item.name %>"><%= item.name %></input></label>
   <% end %>

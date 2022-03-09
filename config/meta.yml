@@ -1,0 +1,5 @@
+meta_product_name: "Todi"
+meta_title: "Todi - for a kid-friendly social circle"
+meta_description: "A platform for parents to connect with other families based on their area and interests + an overview of kid-friendly activities in the area"
+meta_image: "logo.png" # should exist in `app/assets/images/`
+# twitter_account: "@product_twitter_account"   # required for Twitter Cards
