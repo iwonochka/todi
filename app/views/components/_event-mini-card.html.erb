@@ -15,7 +15,7 @@ require 'date' %>
       <%end%>
       <div class="event-mini-card-infos">
         <div class="event-mini-card-name">
-          <h2><%=event.name%></h2>
+          <h2><%=event.name[0,29] %></h2>
         </div>
 
          <%# Display event start/end date + start/end time %>

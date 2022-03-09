@@ -14,27 +14,29 @@
     </div>
   </div>
 
-  <div class="event-mini-card-container">
-    <div class="container-searchbar">
-      <div class="wrap">
-    <%= form_tag events_path, method: :get do %>
-      <div class="search">
-        <div>
-          <%= text_field_tag :query,
-            params[:query],
-            class: "searchTerm",
-            placeholder: "Search Events ",
-            class: "searchbar"
-          %>
+  <div class="search">
+    <div class="wrap">
+      <%= form_tag events_path, method: :get do %>
+        <div class="search">
+          <div>
+            <%= text_field_tag :query,
+              params[:query],
+              class: "searchTerm",
+              placeholder: "Search Events ",
+              class: "searchbar"
+            %>
+          </div>
+          <div>
+            <%= submit_tag "Search", class: "btn btn-searchbar-events" %>
+          </div>
         </div>
-        <div>
-          <%= submit_tag "Search", class: "btn btn-homepage" %>
-        </div>
-      </div>
-    <% end %>
+      <% end %>
     </div>
   </div>
-  <div>
-    <%= render 'components/event-mini-card' %>
+
+  <div class="event-mini-card-container">
+    <div>
+      <%= render 'components/event-mini-card' %>
+    </div>
   </div>
 </div>
