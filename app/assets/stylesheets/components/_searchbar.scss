@@ -58,21 +58,18 @@
 
 .btn-searchbar-events {
   position: absolute;
-  right: -86px;
+  right: -72px;
   top: 0px;
 }
 
 #query.Input-events-searchbar {
   font-size: 16px; /* Increase font-size */
-  padding: 12px 20px 12px 40px; /* Add some padding */
+  padding: 12px 40px 12px 40px; /* Add some padding */
   border: 2px solid $pink; /* Add a grey border */
   margin-bottom: 12px; /* Add some space below the input */
   border-radius: 50px;
   height: 42px;
   font-weight: lighter;
   opacity: 0.7;
-}
-
-.search {
-  left: -4px;
+  margin-left: 4px;
 }
