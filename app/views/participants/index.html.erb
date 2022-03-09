@@ -11,7 +11,7 @@
     <% end %>
   </div>
 
-  <h2 class="events-header"> My events </h2>
+  <h2 class="events-header"> My upcoming events 🎉: </h2>
 
   <% @my_events.each do |event| %>
     <%=link_to event_path(event) do %>
@@ -28,13 +28,6 @@
         <%end%>
         <div class="event-mini-card-infos my-event-name">
           <h2><%=event.name%></h2>
-
-          <% event.tags.each do |eventtag| %>
-            <p class="eventtag-on-event"><%= eventtag.name %></p>
-          <% end %>
-
-        </div>
-
         <%# Display event start/end date + start/end time %>
         <div class="event-date-and-time">
           <%# if ending_date != starting_date, display ending_date %>
@@ -47,6 +40,11 @@
           <p><%= event.starting_time.strftime("%H:%M") %>-<%= event.ending_time.strftime("%H:%M") %></p>
         </div>
 
+          <% event.tags.each do |eventtag| %>
+            <p class="eventtag-on-event"><%= eventtag.name %></p>
+          <% end %>
+
+        </div>
         <%# Display FREE or PRICE %>
         <div class="eventprice">
           <% if !event.free %>

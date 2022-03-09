@@ -47,6 +47,11 @@ photo7 = URI.open('app/assets/images/franky.jpg')
 user_7.photo.attach(io: photo7, filename: 'franky', content_type: 'image/jpg')
 user_7.save!
 
+user_8 = User.create!(username: "Iwona", password: "123456", email: "iwona@gmail.com", location: "Rathenower Str. 30, 10559 Berlin", description: "Hi! I'm a mom of a 6 months old girl who doesn`t cry only when she's outside :) I'm looking for moms in the area who want to join us on never ending stroller walks and share their advice!")
+photo8 = URI.open('app/assets/images/iwona.jpg')
+user_8.photo.attach(io: photo8, filename: 'iwona', content_type: 'image/jpg')
+user_7.save!
+
 # puts "Users created"
 # puts "Creating events"
 
@@ -282,6 +287,8 @@ user_tag11 = UserTag.create(user_id: user_5.id, tag_id: tag16.id)
 user_tag12 = UserTag.create(user_id: user_6.id, tag_id: tag6.id)
 user_tag13 = UserTag.create(user_id: user_6.id, tag_id: tag12.id)
 user_tag14 = UserTag.create(user_id: user_6.id, tag_id: tag8.id)
+user_tag15 = UserTag.create(user_id: user_8.id, tag_id: tag6.id)
+user_tag16 = UserTag.create(user_id: user_8.id, tag_id: tag9.id)
 puts "User tags created"
 puts Tag.all
 puts Event.all
