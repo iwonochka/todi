@@ -1,5 +1,4 @@
-<div id="demo">
-</div>
+<div id="demo"></div>
 
 <div class="search">
   <input type="text" id="myInput" onkeyup="liveSearch(event)" placeholder="What are you looking for?">
@@ -7,33 +6,44 @@
 </div>
 
 <form id="proposedTags" class="border-0">
+
   <% Tag.all.each do |item| %>
     <label for="<%= item.name %>" style="display:none;"><input class="tagitem" type="checkbox" id="<%= item.name %>"><%= item.name %></input></label>
   <% end %>
 </form>
 
 <script>
-  var input, table, i, txtValue, input;
-  input = document.getElementById("myInput");
+  const input = document.getElementById("myInput");
   let typedletters = ""
-  table = document.getElementById("proposedTags");
-  tagitems = table.querySelectorAll("label");
-  let tagItemsArray = [...tagitems]
+  const tagsForm = document.getElementById('proposedTags')
+  const tagLabels = tagsForm.querySelectorAll("label");
+  const tagLabelsArray = [...tagLabels]
+
+// add event listener to the tag chakboxes
+  tagLabelsArray.forEach(tag => tag.addEventListener("click", handleCheckboxLabels))
 
   function handelFormData(event) {
     event.preventDefault() // prevent default form bevaiour (<form action="/search" method="get">)
+    // clearSearchBar() // clear search bar
+    handleCheckboxLabels() // clear search bar; restore tags
     const profileCards = document.querySelectorAll(".profile-mini-card")
     let profileCardsArray = [...profileCards]
-    const form = document.getElementById('proposedTags')
-    const formData = [...form.querySelectorAll('input[type="checkbox"]:checked')].map(item => item.id)
+    const formData = [...tagsForm.querySelectorAll('input[type="checkbox"]:checked')].map(item => item.id)
     console.log("search items", formData)
 
+    tagLabelsArray.forEach(tag => {
+      if (!formData.includes(tag.innerText)) {
+        tag.style.display = "none"
+      }
+    })
+
     if (formData.length > 0) {
-      for (i = 0; i < profileCardsArray.length; i++) {
+      // filter Cards
+      for (let i = 0; i < profileCardsArray.length; i++) {
         console.log(profileCardsArray[i])
         let profileTagsArray = [...profileCardsArray[i].querySelectorAll(".usertag-on-user-index")].map(tag => tag.innerText)
             console.log("profile", profileTagsArray)
-        if (formData.every(searchItem => profileTagsArray.includes(searchItem))) {
+        if (formData.some(searchItem => profileTagsArray.includes(searchItem))) {
             console.log("MATCH")
             profileCardsArray[i].style.display = "";
         } else {
@@ -41,23 +51,46 @@
             profileCardsArray[i].style.display = "none"
         }
       }
+    } else {
+      console.log("search empty - resetting")
+      tagLabels.forEach(tag => tag.style.display = "none");
+      profileCardsArray.forEach(card => card.style.display = "");
     }
   }
 
-  function liveSearch(e) {
-    console.log(typedletters)
-    // console.log(tagitems)
-    typedletters = input.value.toUpperCase();
-    for (i = 0; i < tagItemsArray.length; i++) {
-      // console.log(tagitems[i])
-      if (tagitems[i]) {
-        let txtValue = tagitems[i].innerText;
-        if (txtValue.toUpperCase().startsWith(typedletters)) {
-          tagitems[i].style.display = ""
-        } else {
-          tagitems[i].style.display = "none";
+  function liveSearch(e, formData = []) {
+    // only trigger input is an english letter
+    // i.e. ignore Shift Key as a trigger
+    // cf. https://stackoverflow.com/a/5271201
+    if ((e.which <= 90 && e.which >= 48)) {
+      typedletters = input.value.toUpperCase();
+      for (let i = 0; i < tagLabelsArray.length; i++) {
+        // console.log(tagLabels[i])
+        if (tagLabelsArray[i]) {
+          let txtValue = tagLabelsArray[i].innerText;
+          if (typedletters.length > 0 && txtValue.toUpperCase().startsWith(typedletters)) {
+            tagLabelsArray[i].style.display = ""
+          } else {
+            tagLabelsArray[i].style.display = "none";
+          }
         }
       }
+      showSelectedTagLabels()
     }
+  }
+
+  function handleCheckboxLabels() {
+    clearSearchBar()
+    showSelectedTagLabels()
+  }
+
+  function showSelectedTagLabels() {
+    tagLabelsArray
+      .filter(tag => tag.querySelector('input[type="checkbox"]:checked'))
+        .forEach(label => label.style.display = "")
+  }
+
+  function clearSearchBar() {
+    input.value = ""
   }
 </script>
