@@ -1,19 +1,21 @@
 .event-mini-card {
   overflow: hidden;
-  height: 120px;
+  height: 100px;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
   align-items: center;
-  margin: 16px;
+  margin: auto;
+  margin-top: 16px;
+  margin-bottom: 16px;
   border-radius: 6px;
   position: relative;
+  width: 90%;
 }
 
 .event-mini-card p {
-  font-size: 16px;
+  font-size: 12px;
   line-height: 1.4;
-  opacity: .7;
   margin: 0;
   text-decoration: none !important;
   font-family: Roboto;
@@ -23,30 +25,38 @@
 .event-mini-card h2 {
   text-decoration: none !important;
   font-family: Roboto;
-  font-size: 18px;
+  font-size: 16px;
+  top: 12px;
+  margin-bottom: 0;
 }
 
 .event-mini-card-infos {
-  // width: 65%;
-  padding: 12px;
-  height: 120px;
+  padding-top: 20px;
+  padding: 20px;
+  height: 100px;
+  width: 90%;
 }
 
 .event-mini-card-name {
-  padding: 12px;
 }
 
 .event-date-time-price {
+  margin-top: 8px;
   display: inline;
   overflow: hidden;
+  margin-bottom: 0;
 }
 
 .event-date-and-time {
   float: left;
+  margin-top: 8px;
+  margin-bottom: 0;
 
 }
 
 .eventprice {
   float: right;
   overflow: hidden;
+  margin-top: 8px;
+  margin-bottom: 0;
 }
