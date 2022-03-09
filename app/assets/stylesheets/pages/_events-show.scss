@@ -1,33 +1,92 @@
 .eventpic {
   object-fit: cover;
-  height: 400px;
-  width: 350px; //needs to be flexible to phone screen
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  height: 360px;
+  width: 100%; //needs to be flexible to phone screen
   padding: 0;
-  margin: 16px;
+  // margin: 16px;
   margin-bottom: 0;
 }
 
+.event-show-main-container {
+  // padding: 20px;
+}
+
 .event-show-top-half-container {
-  border-radius: 10px;
+  // margin: auto;
+  padding: 16px;
 }
 
 .event-mini-card-show-page {
   // to complete using Elena's CSS
+  padding-top: 16px;
+  position: relative;
   background: white;
-  height: 120px;
-  display: flex;
-  align-items: center;
-  margin-left: 16px;
-  margin-right: 16px;
-
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  // height: 120px;
+  // margin-left: 16px;
+  // margin-right: 16px;
 }
+
+.event-mini-card-show-infos {
+  height: 100px;
+  width: 90%;
+  padding-left: 16px;
+}
+
+.event-mini-card-show-page h2 {
+font-family: Roboto;
+  font-size: 16px;
+  top: 12px;
+  margin-bottom: 0;
+}
+
+.event-mini-card-show-page p {
+  font-size: 12px;
+  line-height: 1.4;
+  margin: 0;
+  // text-decoration: none !important;
+  font-family: Roboto;
+  font-weight: lighter;
+  }
+
+  // .event-date-time-price {
+  //   margin-top: 8px;
+  //   display: inline;
+  //   overflow: hidden;
+  //   margin-bottom: 0;
+  // }
+
+  // .event-date-and-time {
+  //   float: left;
+  //   margin-top: 8px;
+  //   margin-bottom: 0;
+  // }
+
+  // .eventprice {
+  //   float: right;
+  //   overflow: hidden;
+  //   margin-top: 8px;
+  //   margin-bottom: 0;
+  // }
 
 .event-long-description-container {
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  margin: 16px;
+  margin: 8px 16px 16px 16px;
   border-radius: 10px;
   padding: 12px;
+  font-family: Roboto;
+}
+
+.event-long-description-container h2 {
+  font-size: 20px;
+}
+
+.event-long-description-container p {
+  font-size: 16px;
 }
 
 .btn-event-calendar {
