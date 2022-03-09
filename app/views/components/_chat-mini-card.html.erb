@@ -1,29 +1,31 @@
 <% @chats.each do |chat| %>
-  <div class="chat-mini-card">
-    <% if chat.receiver.photo.attached?%>
-      <div>
-        <%=cl_image_tag chat.receiver.photo.key, class:"avatar-large"%>
+  <div class="row">
+    <div class="chat-mini-card ">
+      <% if chat.receiver.photo.attached?%>
+        <div>
+          <%=cl_image_tag chat.receiver.photo.key, class:"avatar-large"%>
+        </div>
+      <% else %>
+        <div>
+          <%= image_tag("placeholder.png", class: 'avatar-large' )%>
+        </div>
+      <%end%>
+        <div class="chat-mini-card-infos">
+          <% if chat.receiver == current_user %>
+            <%= link_to chat.sender.username,  chat_path(chat)%>
+          <% else %>
+            <%= link_to chat.receiver.username,  chat_path(chat)%>
+          <% end %>
+          <div class="short-message">
+            <% message = Message.where(chat: chat).last %>
+            <% if message %>
+              <%= Message.where(chat: chat).last.content.truncate_words(5) %>
+            <% end %>
+          </div>
+        </div>
+      <div class="datetime chat-date">
+        <p><%= chat.updated_at.strftime("%b %e at %l:%M %p") %></p>
       </div>
-    <% else %>
-      <div>
-        <%= image_tag("placeholder.png", class: 'avatar-large' )%>
-      </div>
-    <%end%>
-    <% if chat.receiver == current_user %>
-      <%= link_to chat.sender.username,  chat_path(chat)%>
-    <% else %>
-      <%= link_to chat.receiver.username,  chat_path(chat)%>
-    <% end %>
-    <div class="chat-mini-card-infos">
-      <div class="short-message">
-        <% message = Message.where(chat: chat).last %>
-        <% if message %>
-          <%= Message.where(chat: chat).last.content.truncate_words(5) %>
-        <% end %>
-      </div>
-    </div>
-    <div class="datetime">
-      <p><%= chat.updated_at.strftime("%b %e at %l:%M %p") %></p>
     </div>
   </div>
-<% end %>
+  <% end %>
