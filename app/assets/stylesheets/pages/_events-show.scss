@@ -1,5 +1,5 @@
 .eventpic {
-  border-radius: 6px;
+  object-fit: cover;
   height: 400px;
   width: 350px; //needs to be flexible to phone screen
   padding: 0;
@@ -7,17 +7,33 @@
   margin-bottom: 0;
 }
 
+.event-show-top-half-container {
+  border-radius: 10px;
+}
+
+.event-mini-card-show-page {
+  // to complete using Elena's CSS
+  background: white;
+  height: 120px;
+  display: flex;
+  align-items: center;
+  margin-left: 16px;
+  margin-right: 16px;
+
+}
+
 .event-long-description-container {
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   margin: 16px;
-  border-radius: 6px;
+  border-radius: 10px;
   padding: 12px;
 }
 
-.btn-event {
+.btn-event-calendar {
 width: 60%;
-margin: 16px auto;
+margin: 20px auto;
+margin-bottom: 28px;
 text-align: center;
 display: block;
 }
