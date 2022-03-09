@@ -1,3 +1,4 @@
+<h2 class="form-header">Create your own event:</h2>
 <div class="new-event-form">
   <div class="form-centered">
     <%= simple_form_for(@event) do |f| %>
@@ -11,6 +12,8 @@
         <%= f.input :free %>
         <%= f.input :price %>
        <%= f.input :photo, as: :file %>
-      <%= f.submit 'Add Event', class: "booking-button btn btn-success"%>
+       <div class="button-container">
+        <%= f.submit 'Create event!', class: "booking-button btn btn-success"%>
+       </div>
     <% end %>
   </div>
