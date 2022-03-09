@@ -18,10 +18,13 @@
   background-color: white;
   margin: 16px 16px;
   border-radius: 10px;
-  padding: 16px;
+  padding: 24px;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  h2, p {
+    font-size: 16px;
+  }
 }
 
 .profile-header {
@@ -35,7 +38,6 @@
   margin: auto;
   justify-content: center;
   flex-wrap: wrap;
-  padding: 8px;
 }
 
 .btn-profile {

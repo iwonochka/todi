@@ -16,16 +16,20 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 24px;
+  padding: 16px 24px 16px 24px;
   position: relative;
   .edit {
     position:absolute;
-    top: 0;
+    top: -5px;
     right: 0;
-    padding: 24px;
+    padding: 16px;
   }
   h2 {
     margin-bottom: 24px;
+    font-size: 16px;
+  }
+  p {
+    font-size: 16px;
   }
 }
 
