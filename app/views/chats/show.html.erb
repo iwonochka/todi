@@ -1,7 +1,12 @@
 <div class="container chat" data-controller="chat-subscription" data-chat-subscription-chat-id-value="<%= @chat.id %>" data-chat-subscription-user-id-value="<%= current_user.id %>">
   <div class= "chat-header">
-    <div><%=cl_image_tag @chat.receiver.photo.key, class:"avatar-large avatar-chat"%></div>
-    <h1><%= @chat.receiver.username%></h1>
+    <% if @chat.receiver == current_user %>
+      <div><%=cl_image_tag @chat.sender.photo.key, class:"avatar-large avatar-chat"%></div>
+      <h1><%= @chat.sender.username%></h1>
+    <% else %>
+      <div><%=cl_image_tag @chat.receiver.photo.key, class:"avatar-large avatar-chat"%></div>
+      <h1><%= @chat.receiver.username%></h1>
+    <% end %>
   </div>
 
   <div class="messages" data-chat-subscription-target="messages" >
@@ -20,7 +25,7 @@
     html: {data: {chat_subscription_target: "form"}, class: "d-flex message-window"} do |f|%>
     <%= f.input :content,
       label: false,
-      placeholder: "Message #{@chat.receiver.username}",
+      placeholder: "Message #{ @chat.receiver == current_user ? @chat.sender.username : @chat.receiver.username }",
       wrapper_html: {class: "flex-grow-1"},
       input_html: {data: {chat_subscription_target: "input"}, autocomplete: 'off'} %>
       <%= button_tag type: 'submit', class: "btn btn-chat" do %>

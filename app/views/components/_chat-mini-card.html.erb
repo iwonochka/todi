@@ -3,7 +3,11 @@
     <div class="chat-mini-card ">
       <% if chat.receiver.photo.attached?%>
         <div>
-          <%=cl_image_tag chat.receiver.photo.key, class:"avatar-large"%>
+          <% if chat.receiver == current_user %>
+            <%=cl_image_tag chat.sender.photo.key, class:"avatar-large"%>
+          <% else %>
+            <%=cl_image_tag chat.receiver.photo.key, class:"avatar-large"%>
+          <% end %>
         </div>
       <% else %>
         <div>
