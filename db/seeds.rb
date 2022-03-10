@@ -37,7 +37,7 @@ photo5 = URI.open('app/assets/images/anna.jpg')
 user_5.photo.attach(io: photo5, filename: 'anna', content_type: 'image/jpg')
 user_5.save!
 
-user_6 = User.create!(username: "Zuzanna", password: "123456", email: "zuzanna@gmail.com", location: "Taubertstraße 29C, 14193 Berlin", description: "I'm a single mom, new to Berlin. I'd love to meet with other Polish moms in the area. Also anyone here whose kid is also hyperactive? Let's support each other!")
+user_6 = User.create!(username: "Zuzanna", password: "123456", email: "zuzanna@gmail.com", location: "Taubertstraße 29C, 14193 Berlin", description: "I'm a single mom, new to Berlin. I'd love to meet with other Polish moms in the area. Also my son (6yrs) was lately diagnosed with attention deficit disorder, I'd love to meet with families who face similar challenges!")
 photo6 = URI.open('app/assets/images/zuzanna.jpg')
 user_6.photo.attach(io: photo6, filename: 'zuzanna', content_type: 'image/jpg')
 user_6.save!
@@ -47,9 +47,14 @@ photo7 = URI.open('app/assets/images/franky.jpg')
 user_7.photo.attach(io: photo7, filename: 'franky', content_type: 'image/jpg')
 user_7.save!
 
-user_8 = User.create!(username: "Iwona", password: "123456", email: "iwona@gmail.com", location: "Rathenower Str. 30, 10559 Berlin", description: "Hi! I'm a mom of a 6 months old girl who doesn`t cry only when she's outside :) I'm looking for moms in the area who want to join us on never ending stroller walks and share their advice!")
+user_8 = User.create!(username: "Iwona", password: "123456", email: "iwona@gmail.com", location: "Rathenower Str. 30, 10559 Berlin", description: "Hi! Me and my 5yrs old daughter moved to Berlin recently, she'd love to find some PL speaking friends who live nearby!")
 photo8 = URI.open('app/assets/images/iwona.jpg')
 user_8.photo.attach(io: photo8, filename: 'iwona', content_type: 'image/jpg')
+user_7.save!
+
+user_9 = User.create!(username: "Ola", password: "123456", email: "ola@gmail.com", location: "Edelhofdamm 2, 13465 Berlin", description: "We'd love to find people with whom we can form a support circle for kids with down syndrome! Anyone lives near Frohnau S-bahn?")
+photo9 = URI.open('app/assets/images/ola.jpg')
+user_9.photo.attach(io: photo9, filename: 'ola', content_type: 'image/jpg')
 user_7.save!
 
 # puts "Users created"
@@ -266,7 +271,7 @@ tag10 = Tag.create(name: "45+ parent")
 tag11 = Tag.create(name: "autism")
 tag12 = Tag.create(name: "ADHD")
 tag13 = Tag.create(name: "diabetic")
-tag14 = Tag.create(name: "cerebral palsy")
+tag14 = Tag.create(name: "down syndrome")
 tag15 = Tag.create(name: "yoga")
 tag16 = Tag.create(name: "vegan")
 tag17 = Tag.create(name: "biking")
@@ -289,6 +294,8 @@ user_tag13 = UserTag.create(user_id: user_6.id, tag_id: tag12.id)
 user_tag14 = UserTag.create(user_id: user_6.id, tag_id: tag8.id)
 user_tag15 = UserTag.create(user_id: user_8.id, tag_id: tag6.id)
 user_tag16 = UserTag.create(user_id: user_8.id, tag_id: tag9.id)
+user_tag17 = UserTag.create(user_id: user_9.id, tag_id: tag14.id)
+user_tag18 = UserTag.create(user_id: user_9.id, tag_id: tag6.id)
 puts "User tags created"
 puts Tag.all
 puts Event.all
