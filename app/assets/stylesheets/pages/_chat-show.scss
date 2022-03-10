@@ -51,9 +51,10 @@
 }
 .message   {
   border-radius: 20px;
-  padding: 8px 16px;
-  width: fit-content;
+  padding: 6px 12px;
   margin-bottom: 8px;
+  width: fit-content;
+
 }
 .outgoing {
   background-color: $orange;
@@ -75,8 +76,4 @@
 .avatar-chat {
   height: 72px !important;
   width: 72px !important;
-}
-.custom-message {
-  border-radius: 20px;
-  width: 50%;
 }
