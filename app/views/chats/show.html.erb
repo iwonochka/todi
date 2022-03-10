@@ -1,3 +1,5 @@
+<% content_for :meta_title, "#{@chat.sender.username} is on #{DEFAULT_META["meta_product_name"]}" %>
+
 <div class="container chat" data-controller="chat-subscription" data-chat-subscription-chat-id-value="<%= @chat.id %>" data-chat-subscription-user-id-value="<%= current_user.id %>">
   <div class= "chat-header">
     <% if @chat.receiver == current_user %>

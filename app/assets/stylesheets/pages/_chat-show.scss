@@ -36,10 +36,11 @@
 .btn-chat {
   position: fixed;
   bottom: 65px;
-  position: absolute;
   right: 10px;
 }
 .messages {
+  display: flex;
+  flex-direction: column;
   height: 75%;
   position: relative;
 }
@@ -50,13 +51,14 @@
 }
 .message   {
   border-radius: 20px;
-  padding: 8px 16px;
-  width: fit-content;
+  padding: 6px 12px;
   margin-bottom: 8px;
+  width: fit-content;
+
 }
 .outgoing {
   background-color: $orange;
-  margin-left: 259px;
+  align-self: flex-end;
 }
 .incoming {
   background-color: $light-gray;
@@ -74,7 +76,4 @@
 .avatar-chat {
   height: 72px !important;
   width: 72px !important;
-}
-.custom-message {
-  border-radius: 20px;
 }
