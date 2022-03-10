@@ -34,7 +34,7 @@ require 'date' %>
            <%# Display FREE or PRICE %>
           <div class="eventprice">
             <% if !event.free %>
-              <p><%= event.price %> €</p>
+              <p><%= number_to_currency(event.price, unit: "€") %></p>
             <% else %>
               <p>free</p>
             <% end %>
