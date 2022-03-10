@@ -289,6 +289,7 @@ user_tag13 = UserTag.create(user_id: user_6.id, tag_id: tag12.id)
 user_tag14 = UserTag.create(user_id: user_6.id, tag_id: tag8.id)
 user_tag15 = UserTag.create(user_id: user_8.id, tag_id: tag6.id)
 user_tag16 = UserTag.create(user_id: user_8.id, tag_id: tag9.id)
+user_tag17 = UserTag.create(user_id: user_7.id, tag_id: tag1.id)
 puts "User tags created"
 puts Tag.all
 puts Event.all
