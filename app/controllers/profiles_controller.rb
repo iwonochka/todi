@@ -1,4 +1,5 @@
 class ProfilesController < ApplicationController
+  skip_before_action :authenticate_user!, only: [ :index ]
   def index
     if params[:query].present?
       @users = User.where.not(id: current_user).search_by_username_and_location(params[:query])
