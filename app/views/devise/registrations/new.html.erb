@@ -4,6 +4,7 @@
   <%= f.error_notification %>
 
   <div class="form-inputs">
+    <%= f.input :username %>
     <%= f.input :email,
                 required: true,
                 autofocus: true,
@@ -15,6 +16,14 @@
     <%= f.input :password_confirmation,
                 required: true,
                 input_html: { autocomplete: "new-password" } %>
+    <%= f.input :description %>
+
+    <% Tag.all.each do |tag| %>
+    <%=f.collection_check_boxes :user_tags, [[tag, tag.name]], :first, :last, required: true%>
+    <% end %>
+
+    <%= f.input :location, label: "Address", placeholder: 'Postcode, City'%>
+    <%= f.input :photo, as: :file %>
   </div>
 
   <div class="form-actions">
