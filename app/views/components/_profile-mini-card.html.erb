@@ -21,7 +21,9 @@
       </div>
     </div>
     <div class="distance">
+      <% if user.location %>
       <p><%=user.distance_to("Berlin").truncate(1)%> km</p>
+      <% end %>
     </div>
   </div>
   <% end %>
