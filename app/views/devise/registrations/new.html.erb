@@ -1,3 +1,6 @@
+
+<%# <% require 'pry-byebug' %>
+
 <h2>Sign up</h2>
 
 <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
@@ -18,8 +21,10 @@
                 input_html: { autocomplete: "new-password" } %>
     <%= f.input :description %>
 
-    <% Tag.all.each do |tag| %>
-    <%=f.collection_check_boxes :user_tags, [[tag, tag.name]], :first, :last, required: true%>
+    <% User::TAGS.each do |tag| %>
+    <%# <%=f.collection_check_boxes :user_tags, [[tag, tag.name]], :first, :last, required: true%>
+    <%=f.check_box :tags, { multiple: true }, tag, nil %>
+    <%=f.label tag %>
     <% end %>
 
     <%= f.input :location, label: "Address", placeholder: 'Postcode, City'%>

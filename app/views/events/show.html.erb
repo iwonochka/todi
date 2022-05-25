@@ -25,7 +25,7 @@
             <div class="event-mini-card-show-infos height-fix">
               <h2><%= @event.name %></h2>
               <% @event.tags.each do |eventtag| %>
-                <p class="eventtag-on-event"><%= eventtag.name %></p>
+                <p class="eventtag-on-event"><%= eventtag %></p>
               <% end %>
                   <%# Display event start/end date + start/end time %>
               <div class="event-date-and-time float-fix">

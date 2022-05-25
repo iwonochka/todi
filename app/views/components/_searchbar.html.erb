@@ -7,8 +7,8 @@
 
 <form id="proposedTags" class="border-0">
 
-  <% Tag.all.each do |item| %>
-    <label for="<%= item.name %>" style="display:none;"><input class="tagitem" type="checkbox" id="<%= item.name %>"><%= item.name %></input></label>
+  <% User::TAGS.each do |item| %>
+    <label for="<%= item %>" style="display:none;"><input class="tagitem" type="checkbox" id="<%= item %>"><%= item %></input></label>
   <% end %>
 </form>
 

@@ -1,5 +1,6 @@
 class ProfilesController < ApplicationController
-  skip_before_action :authenticate_user!, only: [ :index ]
+  skip_before_action :authenticate_user!, only: [:index]
+
   def index
     if params[:query].present?
       @users = User.where.not(id: current_user).search_by_username_and_location(params[:query])
@@ -18,7 +19,8 @@ class ProfilesController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    @chat = (Chat.where(sender:@user).or(Chat.where(receiver: @user))).and(Chat.where(sender:current_user).or(Chat.where(receiver: current_user))).first
+    @chat = (Chat.where(sender: @user).or(Chat.where(receiver: @user))).and(Chat.where(sender: current_user)
+            .or(Chat.where(receiver: current_user))).first
   end
 
   def dashboard

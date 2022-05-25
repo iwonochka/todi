@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_03_08_095934) do
+ActiveRecord::Schema.define(version: 2022_05_25_184920) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -52,15 +52,6 @@ ActiveRecord::Schema.define(version: 2022_03_08_095934) do
     t.index ["sender_id"], name: "index_chats_on_sender_id"
   end
 
-  create_table "event_tags", force: :cascade do |t|
-    t.bigint "event_id", null: false
-    t.bigint "tag_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["event_id"], name: "index_event_tags_on_event_id"
-    t.index ["tag_id"], name: "index_event_tags_on_tag_id"
-  end
-
   create_table "events", force: :cascade do |t|
     t.string "name"
     t.date "starting_date"
@@ -76,6 +67,7 @@ ActiveRecord::Schema.define(version: 2022_03_08_095934) do
     t.datetime "updated_at", precision: 6, null: false
     t.float "latitude"
     t.float "longitude"
+    t.text "tags", default: [], array: true
     t.index ["user_id"], name: "index_events_on_user_id"
   end
 
@@ -98,21 +90,6 @@ ActiveRecord::Schema.define(version: 2022_03_08_095934) do
     t.index ["user_id"], name: "index_participants_on_user_id"
   end
 
-  create_table "tags", force: :cascade do |t|
-    t.string "name"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "user_tags", force: :cascade do |t|
-    t.bigint "user_id", null: false
-    t.bigint "tag_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["tag_id"], name: "index_user_tags_on_tag_id"
-    t.index ["user_id"], name: "index_user_tags_on_user_id"
-  end
-
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -127,6 +104,7 @@ ActiveRecord::Schema.define(version: 2022_03_08_095934) do
     t.float "longitude"
     t.text "description"
     t.text "user_tag"
+    t.text "tags", default: [], array: true
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
@@ -135,13 +113,9 @@ ActiveRecord::Schema.define(version: 2022_03_08_095934) do
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "chats", "users", column: "receiver_id"
   add_foreign_key "chats", "users", column: "sender_id"
-  add_foreign_key "event_tags", "events"
-  add_foreign_key "event_tags", "tags"
   add_foreign_key "events", "users"
   add_foreign_key "messages", "chats"
   add_foreign_key "messages", "users"
   add_foreign_key "participants", "events"
   add_foreign_key "participants", "users"
-  add_foreign_key "user_tags", "tags"
-  add_foreign_key "user_tags", "users"
 end
