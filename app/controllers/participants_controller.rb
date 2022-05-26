@@ -11,7 +11,7 @@ class ParticipantsController < ApplicationController
     @participant.user = current_user
     @participant.event = @event
     if @participant.save
-      flash[:alert] = "Event added to your calender"
+      flash[:alert] = "Event added to your calendar"
     end
     redirect_to event_path(@event)
   end
@@ -28,7 +28,7 @@ class ParticipantsController < ApplicationController
     @participant.user = current_user
     @participant.destroy
     redirect_to event_path(@event)
-    flash[:alert] = "Event removed from your calender"
+    flash[:alert] = "Event removed from your calendar"
   end
 
 
