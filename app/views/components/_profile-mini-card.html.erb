@@ -1,7 +1,9 @@
-<% if user_signed_in? && current_user.location %>
+<% if user_signed_in? && current_user.location != "" %>
 <% users = @users.sort_by{|listing| listing.distance_to(current_user.location)} %>
-<% else %>
+<% elsif params[:query] %>
 <% users = @users.sort_by{|listing| listing.distance_to(params[:query].capitalize)} %>
+<% else %>
+<% users = @users %>
 <% end %>
 <% users.each do |user| %>
   <%=link_to profile_path(user) do %>
@@ -26,10 +28,12 @@
       </div>
     </div>
     <div class="distance">
-      <% if current_user %>
+      <% if current_user.location != "" %>
       <p><%=user.distance_to(current_user.location).truncate(1)%> km</p>
-      <% else %>
+      <% elsif params[:query] %>
       <p><%=user.distance_to(params[:query].capitalize).truncate(1)%> km</p>
+      <% else %>
+      <% nil %>
       <% end %>
     </div>
   </div>
