@@ -22,7 +22,18 @@
   margin-right: 8px;
   height: 22px;
 }
-
+.eventtag-on-event-show {
+  background-color: white;
+  border-radius: 6px;
+  border: 1px solid $orange;
+  font-size: 8px;
+  color: $orange;
+  font-weight: 2px;
+  box-shadow: none;
+  padding: 2px 8px;
+  margin-right: 8px;
+  height: 22px;
+}
 
 .keywords-container {
   width: 180px;
