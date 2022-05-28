@@ -10,10 +10,6 @@
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
 }
 
-.event-show-main-container {
-  // padding: 20px;
-}
-
 .event-show-top-half-container {
   padding: 16px;
 }
@@ -21,6 +17,7 @@
 .event-mini-card-show-page {
   // to complete using Elena's CSS
   padding-top: 16px;
+  padding-bottom: 20px;
   position: relative;
   background: white;
   border-bottom-left-radius: 10px;
@@ -48,7 +45,6 @@
 .event-mini-card-show-page p {
   font-size: 12px;
   line-height: 1.4;
-  margin: 0;
   // text-decoration: none !important;
   font-family: Roboto;
   font-weight: lighter;
@@ -123,3 +119,10 @@ display: block;
 // I'm so glad we have moved to Berlin, and I really look fwd to meeting new people here.
 // My children would love to make friends with other kids in our neighborhood.
 // How did you meet other families when you first moved to Berlin?
+
+.extra-info {
+  margin-top: 0px;
+  margin-right: 0px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+}
