@@ -28,7 +28,7 @@
       </div>
     </div>
     <div class="distance">
-      <% if current_user.location != "" %>
+      <% if user_signed_in? && current_user.location != "" %>
       <p><%=user.distance_to(current_user.location).truncate(1)%> km</p>
       <% elsif params[:query] %>
       <p><%=user.distance_to(params[:query].capitalize).truncate(1)%> km</p>
