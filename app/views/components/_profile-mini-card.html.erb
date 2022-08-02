@@ -1,4 +1,4 @@
-<% if user_signed_in? && current_user.location != "" %>
+<% if user_signed_in? && current_user.location != nil %>
 <% users = @users.sort_by{|listing| listing.distance_to(current_user.location)} %>
 <% elsif params[:query] %>
 <% users = @users.sort_by{|listing| listing.distance_to(params[:query].capitalize)} %>
